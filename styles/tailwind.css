@@ -1,0 +1,33 @@
+/* Tailwind config */
+tailwind.config = {
+    theme: {
+        extend: {
+            colors: {
+                primary: '#8A2BE2',
+                secondary: '#00FFFF'
+            },
+            borderRadius: {
+                'none': '0px',
+                'sm': '4px',
+                DEFAULT: '8px',
+                'md': '12px',
+                'lg': '16px',
+                'xl': '20px',
+                '2xl': '24px',
+                '3xl': '32px',
+                'full': '9999px',
+                'button': '8px'
+            }
+        }
+    }
+}
+
+/* Custom utility classes */
+.container {
+    width: 100%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Add all your Tailwind utility classes here */

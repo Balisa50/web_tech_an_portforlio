@@ -1,0 +1,550 @@
+OCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QuantumInsights| African Data & AI Consultancy</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: '#e17055',
+          secondary: '#6ab04c'
+        },
+        borderRadius: {
+          'none': '0px',
+          'sm': '4px',
+          DEFAULT: '8px',
+          'md': '12px',
+          'lg': '16px',
+          'xl': '20px',
+          '2xl': '24px',
+          '3xl': '32px',
+          'full': '9999px',
+          'button': '8px'
+        }
+      }
+    }
+  }
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<style>
+  :where([class^="ri-"])::before { content: "\f3c2"; }
+  body {
+    font-family: 'Montserrat', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+  }
+  .stat-number {
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .nav-link {
+    position: relative;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #6ab04c;
+    transition: width 0.3s ease;
+  }
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  .active::after {
+    width: 100%;
+  }
+  input[type="search"]::-webkit-search-decoration,
+  input[type="search"]::-webkit-search-cancel-button,
+  input[type="search"]::-webkit-search-results-button,
+  input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+  }
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+</style>
+</head>
+<body class="bg-white min-h-screen">
+  <!-- Header Section -->
+  <header class="w-full bg-white shadow-sm fixed top-0 left-0 right-0 z-50">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center">
+        <a href="#" class="text-2xl font-bold text-primary mr-10">10v10</a>
+        <nav class="hidden lg:flex space-x-8">
+          <a href="#" class="nav-link active text-gray-800 font-medium hover:text-primary transition-colors">Home</a>
+          <a href="#about" class="nav-link text-gray-800 font-medium hover:text-primary transition-colors">About</a>
+          <a href="#services" class="nav-link text-gray-800 font-medium hover:text-primary transition-colors">Services</a>
+          <a href="#industries" class="nav-link text-gray-800 font-medium hover:text-primary transition-colors">Industries</a>
+          <a href="#projects" class="nav-link text-gray-800 font-medium hover:text-primary transition-colors">Projects</a>
+          <a href="#contact" class="nav-link text-gray-800 font-medium hover:text-primary transition-colors">Contact</a>
+        </nav>
+      </div>
+      <div class="flex items-center space-x-4">
+        <div class="relative hidden md:block">
+          <input type="search" placeholder="Search..." class="pl-10 pr-4 py-2 w-48 rounded-full text-sm border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+          <div class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400">
+            <i class="ri-search-line"></i>
+          </div>
+        </div>
+        <a href="#contact" class="bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">Get a Free Consultation</a>
+        <button class="lg:hidden w-10 h-10 flex items-center justify-center text-gray-700">
+          <i class="ri-menu-line text-xl"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="pt-24 relative overflow-hidden" style="background-image: url('https://public.readdy.ai/ai/img_res/c036ec6094442f682ef16df94ac597ff.jpg'); background-size: cover; background-position: center;">
+    <div class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent"></div>
+    <div class="container mx-auto px-4 py-20 md:py-28 relative z-10">
+      <div class="max-w-2xl">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Transforming Businesses Through Data & AI</h1>
+        <p class="text-xl text-gray-700 mb-8">Your partner in full-stack data consultancy, from analytics to AI deployment.</p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#contact" class="bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">Get a Free Consultation</a>
+          <a href="#about" class="bg-secondary text-white px-6 py-3 !rounded-button font-medium hover:bg-secondary/90 transition-colors whitespace-nowrap">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Logos Section -->
+  <section class="py-12 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-lg font-medium text-center text-gray-500 mb-8">Trusted by leading organizations across the country and beyond</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
+        <div class="p-4 grayscale hover:grayscale-0 transition-all duration-300 flex items-center justify-center">
+          <img src="https://public.readdy.ai/ai/img_res/dc81a6511ae8b4d2aa158e0848e13922.jpg" alt="Client Logo" class="max-h-12">
+        </div>
+        <div class="p-4 grayscale hover:grayscale-0 transition-all duration-300 flex items-center justify-center">
+          <img src="https://public.readdy.ai/ai/img_res/aa6ae4c2e76395d63156e27f72e6dabe.jpg" alt="Client Logo" class="max-h-12">
+        </div>
+        <div class="p-4 grayscale hover:grayscale-0 transition-all duration-300 flex items-center justify-center">
+          <img src="https://public.readdy.ai/ai/img_res/9272a96119697864494aaab2c3bf0ab4.jpg" alt="Client Logo" class="max-h-12">
+        </div>
+        <div class="p-4 grayscale hover:grayscale-0 transition-all duration-300 flex items-center justify-center">
+          <img src="https://public.readdy.ai/ai/img_res/5457838e20d7d001dbab3265a8e1de6c.jpg" alt="Client Logo" class="max-h-12">
+        </div>
+        <div class="p-4 grayscale hover:grayscale-0 transition-all duration-300 flex items-center justify-center">
+          <img src="https://public.readdy.ai/ai/img_res/6fea1afb01566164f6f1f6dc2e098121.jpg" alt="Client Logo" class="max-h-12">
+        </div>
+        <div class="p-4 grayscale hover:grayscale-0 transition-all duration-300 flex items-center justify-center">
+          <img src="https://public.readdy.ai/ai/img_res/38ef2c6c28cb1ce9e1b034550bef82bd.jpg" alt="Client Logo" class="max-h-12">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">About Us</h2>
+        
+        <!-- Founder Spotlight -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+          <div>
+            <img src="https://public.readdy.ai/ai/img_res/b77d163adc945152b2d6e57a2b259a3b.jpg" alt="Abdoulie Balisa" class="rounded-lg shadow-md w-full h-auto">
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Our Founder</h3>
+            <h4 class="text-xl font-semibold text-primary mb-4">Abdoulie Balisa</h4>
+            <p class="text-gray-700 mb-6">Abdoulie Balisa founded QuantumInsights with a vision to transform how businesses leverage data. With a background in data science and statistics, and experience working with global tech companies, Abdoulie returned to The Gambia determined to build a consultancy that would bridge the data literacy gap across the country and beyond.</p>
+            <p class="text-gray-700 mb-6">His journey began when he identified that many African businesses were collecting vast amounts of data but lacked the expertise to transform it into actionable insights. This realization led to the creation of QuantumInsights, which has since grown from a one-person operation to a team of data professionals serving clients across The Gambia and Africa at large.</p>
+            <div class="flex space-x-4">
+              <a href="#" class="text-primary hover:text-primary/80 transition-colors flex items-center">
+                <i class="ri-linkedin-fill mr-2"></i> LinkedIn
+              </a>
+              <a href="#" class="text-primary hover:text-primary/80 transition-colors flex items-center">
+                <i class="ri-twitter-x-fill mr-2"></i> Twitter
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Mission & Vision -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+          <div class="order-2 lg:order-1">
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Our Mission & Vision</h3>
+            <div class="mb-8">
+              <h4 class="text-xl font-semibold text-primary mb-3">Mission</h4>
+              <p class="text-gray-700">To empower African businesses and organizations with data-driven insights that drive sustainable growth, innovation, and competitive advantage in the global marketplace.</p>
+            </div>
+            <div class="mb-8">
+              <h4 class="text-xl font-semibold text-primary mb-3">Vision</h4>
+              <p class="text-gray-700">To be the leading data and AI consultancy in Africa, recognized globally for our expertise in delivering culturally relevant, high-impact data solutions that transform businesses and communities.</p>
+            </div>
+            <a href="#services" class="inline-block bg-secondary text-white px-6 py-3 !rounded-button font-medium hover:bg-secondary/90 transition-colors whitespace-nowrap">Our Services</a>
+          </div>
+          <div class="order-1 lg:order-2">
+            <img src="https://public.readdy.ai/ai/img_res/55e8a1c2c964d9e9935ed3a385e68e63.jpg" alt="Our Mission and Vision" class="rounded-lg shadow-md w-full h-auto">
+          </div>
+        </div>
+        
+        <!-- Team Structure -->
+        <div class="mb-16">
+          <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">The 10v10 Team Structure</h3>
+          <div class="bg-gray-50 p-8 rounded-lg shadow-sm">
+            <p class="text-gray-700 mb-6 text-center">At 10v10, we operate with our innovative team structure, designed to deliver comprehensive data solutions efficiently.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h4 class="text-xl font-semibold text-primary mb-4 flex items-center">
+                  <i class="ri-database-2-line mr-2"></i> Data Engineering Team
+                </h4>
+                <ul class="space-y-2 text-gray-700">
+                  <li class="flex items-start">
+                    <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mr-3 mt-1">
+                      <i class="ri-check-line text-primary text-sm"></i>
+                    </div>
+                    <span>Data architects and infrastructure specialists</span>
+                  </li>
+                  <li class="flex items-start">
+                    <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mr-3 mt-1">
+                      <i class="ri-check-line text-primary text-sm"></i>
+                    </div>
+                    <span>ETL developers and data pipeline engineers</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="text-xl font-semibold text-primary mb-4 flex items-center">
+                  <i class="ri-ai-generate mr-2"></i> Data Science Team
+                </h4>
+                <ul class="space-y-2 text-gray-700">
+                  <li class="flex items-start">
+                    <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mr-3 mt-1">
+                      <i class="ri-check-line text-primary text-sm"></i>
+                    </div>
+                    <span>Data scientists and ML engineers</span>
+                  </li>
+                  <li class="flex items-start">
+                    <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mr-3 mt-1">
+                      <i class="ri-check-line text-primary text-sm"></i>
+                    </div>
+                    <span>AI specialists and research scientists</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Core Values -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-6">Our Core Values</h3>
+            <div class="space-y-6">
+              <div class="flex">
+                <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
+                  <i class="ri-lightbulb-flash-line text-primary text-2xl"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-semibold text-gray-900 mb-2">Innovation</h4>
+                  <p class="text-gray-700">We constantly push the boundaries of what's possible with data and AI, developing solutions that address uniquely African challenges.</p>
+                </div>
+              </div>
+              <div class="flex">
+                <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
+                  <i class="ri-shield-check-line text-primary text-2xl"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-semibold text-gray-900 mb-2">Security</h4>
+                  <p class="text-gray-700">We implement the highest standards of data protection and privacy, ensuring our clients' information is always secure.</p>
+                </div>
+              </div>
+              <div class="flex">
+                <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
+                  <i class="ri-scales-3-line text-primary text-2xl"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-semibold text-gray-900 mb-2">Scalability</h4>
+                  <p class="text-gray-700">Our solutions are designed to grow with your business, from startup to enterprise, adapting to your evolving data needs.</p>
+                </div>
+              </div>
+              <div class="flex">
+                <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
+                  <i class="ri-global-line text-primary text-2xl"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-semibold text-gray-900 mb-2">Impact</h4>
+                  <p class="text-gray-700">We measure our success by the tangible business outcomes and positive social impact our work creates across Africa.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-6">Our Headquarters</h3>
+            <div class="rounded-lg overflow-hidden shadow-md mb-4">
+              <div class="w-full h-64 bg-cover bg-center" style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png')"></div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <h4 class="text-lg font-semibold text-gray-900 mb-2 flex items-center">
+                <i class="ri-map-pin-line text-primary mr-2"></i> Fajikunda, The Gambia
+              </h4>
+              <p class="text-gray-700 mb-4">Our headquarters is located in the vibrant community of Fajikunda, where we've built a state-of-the-art data center and collaborative workspace designed to foster innovation.</p>
+              <a href="https://maps.google.com" target="_blank" class="text-primary hover:text-primary/80 transition-colors flex items-center">
+                <i class="ri-road-map-line mr-2"></i> Get Directions
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Key Milestones -->
+        <div class="mb-16">
+          <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">Key Milestones & Achievements</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                <i class="ri-ai-generate text-primary text-2xl"></i>
+              </div>
+              <h4 class="text-lg font-semibold text-gray-900 mb-2">AI-Powered Crop Yield Prediction</h4>
+              <p class="text-gray-700">Developed an AI system that helps small-scale farmers predict crop yields with 85% accuracy, now used by over 10,000 farmers across West Africa.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                <i class="ri-bank-line text-primary text-2xl"></i>
+              </div>
+              <h4 class="text-lg font-semibold text-gray-900 mb-2">Financial Inclusion Data Platform</h4>
+              <p class="text-gray-700">Created a data platform that has helped financial institutions extend services to over 500,000 previously unbanked individuals across East Africa.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                <i class="ri-health-book-line text-primary text-2xl"></i>
+              </div>
+              <h4 class="text-lg font-semibold text-gray-900 mb-2">Healthcare Resource Optimization</h4>
+              <p class="text-gray-700">Implemented predictive analytics systems that improved resource allocation in 25 hospitals, reducing wait times by 40% and improving patient outcomes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Our Services</h2>
+      
+      <!-- Data Analytics & BI -->
+      <div class="mb-16">
+        <div class="flex items-center justify-center mb-8">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+            <i class="ri-bar-chart-box-line text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-2xl font-semibold text-gray-900">Data Analytics & BI</h3>
+        </div>
+        <div class="bg-white p-8 rounded-lg shadow-sm">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2">
+              <p class="text-gray-700 mb-6">Transform your raw data into actionable insights with our comprehensive analytics solutions tailored for African business contexts. Our team specializes in creating intuitive dashboards and reports that make complex data accessible and actionable.</p>
+              <div class="mb-6">
+                <h4 class="text-lg font-semibold text-primary mb-3">Tools We Use</h4>
+                <div class="flex flex-wrap gap-3">
+                  <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Power BI</span>
+                  <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">SQL</span>
+                  <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Tableau</span>
+                  <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Python</span>
+                </div>
+              </div>
+              <div class="mb-6">
+                <h4 class="text-lg font-semibold text-primary mb-3">Use Cases</h4>
+                <ul class="space-y-2">
+                  <li class="flex items-start">
+                    <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mr-3 mt-1">
+                      <i class="ri-check-line text-primary text-sm"></i>
+                    </div>
+                    <span class="text-gray-700">Sales performance dashboards for retail chains across Nigeria</span>
+                  </li>
+                  <li class="flex items-start">
+                    <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mr-3 mt-1">
+                      <i class="ri-check-line text-primary text-sm"></i>
+                    </div>
+                    <span class="text-gray-700">Customer segmentation analysis for telecom providers in Kenya</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="lg:border-l lg:pl-8 lg:border-gray-200">
+              <h4 class="text-lg font-semibold text-primary mb-4">Pricing Structure</h4>
+              <div class="space-y-4">
+                <div class="p-4 border border-gray-200 rounded-lg">
+                  <h5 class="font-semibold text-gray-900 mb-2">Basic</h5>
+                  <p class="text-gray-700 text-sm mb-2">Single dashboard development with monthly maintenance</p>
+                  <p class="text-xl font-bold text-primary">$2,500<span class="text-sm font-normal text-gray-600">/project</span></p>
+                </div>
+                <div class="p-4 border border-gray-200 rounded-lg bg-primary/5">
+                  <h5 class="font-semibold text-gray-900 mb-2">Standard</h5>
+                  <p class="text-gray-700 text-sm mb-2">Multiple dashboards with data integration and quarterly strategy</p>
+                  <p class="text-xl font-bold text-primary">$5,000<span class="text-sm font-normal text-gray-600">/project</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-6 text-center">
+            <a href="#contact" class="inline-block bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">Book a Consultation</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- AI & Machine Learning -->
+      <div class="mb-16">
+        <div class="flex items-center justify-center mb-8">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+            <i class="ri-ai-generate text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-2xl font-semibold text-gray-900">AI & Machine Learning</h3>
+        </div>
+        <div class="bg-white p-8 rounded-lg shadow-sm">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2">
+              <p class="text-gray-700 mb-6">Leverage the power of artificial intelligence and machine learning to automate processes, predict trends, and gain competitive advantages. Our solutions are designed to address the unique challenges and opportunities in African markets.</p>
+              <div class="mb-6">
+                <h4 class="text-lg font-semibold text-primary mb-3">Tools We Use</h4>
+                <div class="flex flex-wrap gap-3">
+                  <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">TensorFlow</span>
+                  <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">PyTorch</span>
+                  <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Scikit-learn</span>
+                </div>
+              </div>
+              <div class="mb-6">
+                <h4 class="text-lg font-semibold text-primary mb-3">Use Cases</h4>
+                <ul class="space-y-2">
+                  <li class="flex items-start">
+                    <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mr-3 mt-1">
+                      <i class="ri-check-line text-primary text-sm"></i>
+                    </div>
+                    <span class="text-gray-700">Demand forecasting for agricultural supply chains in East Africa</span>
+                  </li>
+                  <li class="flex items-start">
+                    <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mr-3 mt-1">
+                      <i class="ri-check-line text-primary text-sm"></i>
+                    </div>
+                    <span class="text-gray-700">Customer churn prediction for mobile money services</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="lg:border-l lg:pl-8 lg:border-gray-200">
+              <h4 class="text-lg font-semibold text-primary mb-4">Pricing Structure</h4>
+              <div class="space-y-4">
+                <div class="p-4 border border-gray-200 rounded-lg">
+                  <h5 class="font-semibold text-gray-900 mb-2">Proof of Concept</h5>
+                  <p class="text-gray-700 text-sm mb-2">Initial model development and validation</p>
+                  <p class="text-xl font-bold text-primary">$7,500<span class="text-sm font-normal text-gray-600">/project</span></p>
+                </div>
+                <div class="p-4 border border-gray-200 rounded-lg bg-primary/5">
+                  <h5 class="font-semibold text-gray-900 mb-2">Production Ready</h5>
+                  <p class="text-gray-700 text-sm mb-2">Full model development with integration and training</p>
+                  <p class="text-xl font-bold text-primary">$15,000<span class="text-sm font-normal text-gray-600">/project</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-6 text-center">
+            <a href="#contact" class="inline-block bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">Book a Consultation</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Big Data & Cloud Computing -->
+      <div class="mb-16">
+        <div class="flex items-center justify-center mb-8">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+            <i class="ri-cloud-line text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-2xl font-semibold text-gray-900">Big Data & Cloud Computing</h3>
+        </div>
+        <div class="bg-white p-8 rounded-lg shadow-sm">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2">
+              <p class="text-gray-700 mb-6">Harness the power of cloud computing and big data technologies to process, store, and analyze massive datasets efficiently. Our solutions are designed to be cost-effective and scalable, perfect for growing African businesses.</p>
+              <div class="mb-6">
+                <h4 class="text-lg font-semibold text-primary mb-3">Tools We Use</h4>
+                <div class="flex flex-wrap gap-3">
+                  <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">AWS</span>
+                  <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Azure</span>
+                  <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Google Cloud</span>
+                </div>
+              </div>
+              <div class="mb-6">
+                <h4 class="text-lg font-semibold text-primary mb-3">Use Cases</h4>
+                <ul class="space-y-2">
+                  <li class="flex items-start">
+                    <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mr-3 mt-1">
+                      <i class="ri-check-line text-primary text-sm"></i>
+                    </div>
+                    <span class="text-gray-700">Cloud migration for financial institutions in Morocco</span>
+                  </li>
+                  <li class="flex items-start">
+                    <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mr-3 mt-1">
+                      <i class="ri-check-line text-primary text-sm"></i>
+                    </div>
+                    <span class="text-gray-700">Big data processing for telecom network optimization in Egypt</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="lg:border-l lg:pl-8 lg:border-gray-200">
+              <h4 class="text-lg font-semibold text-primary mb-4">Pricing Structure</h4>
+              <div class="space-y-4">
+                <div class="p-4 border border-gray-200 rounded-lg">
+                  <h5 class="font-semibold text-gray-900 mb-2">Cloud Assessment</h5>
+                  <p class="text-gray-700 text-sm mb-2">Infrastructure evaluation and migration planning</p>
+                  <p class="text-xl font-bold text-primary">$3,500<span class="text-sm font-normal text-gray-600">/assessment</span></p>
+                </div>
+                <div class="p-4 border border-gray-200 rounded-lg bg-primary/5">
+                  <h5 class="font-semibold text-gray-900 mb-2">Implementation</h5>
+                  <p class="text-gray-700 text-sm mb-2">Full cloud migration and big data infrastructure setup</p>
+                  <p class="text-xl font-bold text-primary">$12,000<span class="text-sm font-normal text-gray-600">/project</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-6 text-center">
+            <a href="#contact" class="inline-block bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">Book a Consultation</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Data Governance & Compliance -->
+      <div class="mb-16">
+        <div class="flex items-center justify-center mb-8">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+            <i class="ri-shield-check-line text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-2xl font-semibold text-gray-900">Data Governance & Compliance</h3>
+        </div>
+        <div class="bg-white p-8 rounded-lg shadow-sm">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2">
+              <p class="text-gray-700 mb-6">Ensure your data practices comply with local and international regulations while maintaining data quality and security. Our governance frameworks are designed to protect your data assets while enabling innovation.</p>
+              <div class="mb-6">
+                <h4 class="text-lg font-semibold text-primary mb-3">Focus Areas</h4>
+                <div class="flex flex-wrap gap-3">
+                  <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">GDPR Compliance</span>
+                  <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">POPIA (South Africa)</span>
+                  <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Data Security</span>
+                </div>
+              </div>
+              <div class="mb-6">
+                <h4 class="text-lg font-semibold text-primary mb-3">Use Cases</h4>
+                <ul class="space-y-2">
+                  <li class="flex items-start">
+                    <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mr-3 mt-1">

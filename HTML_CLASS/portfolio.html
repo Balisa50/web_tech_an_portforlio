@@ -1,0 +1,1904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdoulie Balisa - Data Scientist Portfolio</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#8A2BE2',secondary:'#00FFFF'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<style>
+:root {
+--color-primary: #8A2BE2;
+--color-secondary: #00FFFF;
+--border-radius-none: 0px;
+--border-radius-sm: 4px;
+--border-radius-default: 8px;
+--border-radius-md: 12px;
+--border-radius-lg: 16px;
+--border-radius-xl: 20px;
+--border-radius-2xl: 24px;
+--border-radius-3xl: 32px;
+--border-radius-full: 9999px;
+--border-radius-button: 8px;
+}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<style> :where([class^="ri-"])::before { content: "\f3c2"; } </style>
+<style>
+@keyframes float {
+0% { transform: translateY(0px); }
+50% { transform: translateY(-10px); }
+100% { transform: translateY(0px); }
+}
+@keyframes pulse {
+0% { box-shadow: 0 0 0 0 rgba(138, 43, 226, 0.4); }
+70% { box-shadow: 0 0 0 15px rgba(138, 43, 226, 0); }
+100% { box-shadow: 0 0 0 0 rgba(138, 43, 226, 0); }
+}
+@keyframes typing {
+from { width: 0 }
+to { width: 100% }
+}
+.typing-animation {
+overflow: hidden;
+white-space: nowrap;
+animation: typing 3.5s steps(40, end);
+}
+.floating {
+animation: float 6s ease-in-out infinite;
+}
+.pulsing {
+animation: pulse 2s infinite;
+}
+.neon-text {
+text-shadow: 0 0 5px rgba(138, 43, 226, 0.8), 0 0 10px rgba(138, 43, 226, 0.5), 0 0 15px rgba(138, 43, 226, 0.3);
+}
+.neon-border {
+box-shadow: 0 0 5px rgba(0, 255, 255, 0.8), 0 0 10px rgba(0, 255, 255, 0.5);
+}
+.cyberpunk-grid {
+background-image:
+linear-gradient(rgba(18, 16, 27, 0.8) 1px, transparent 1px),
+linear-gradient(90deg, rgba(18, 16, 27, 0.8) 1px, transparent 1px);
+background-size: 20px 20px;
+background-position: center center;
+}
+.gradient-text {
+background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+}
+.hero-bg {
+background: linear-gradient(135deg, #121212 0%, #1E1E2E 100%);
+}
+.card-hover:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 20px rgba(138, 43, 226, 0.2);
+}
+.timeline-line {
+position: absolute;
+top: 0;
+bottom: 0;
+left: 50%;
+width: 2px;
+background: linear-gradient(to bottom, var(--color-primary), var(--color-secondary));
+transform: translateX(-50%);
+}
+.timeline-dot {
+position: absolute;
+width: 16px;
+height: 16px;
+border-radius: 50%;
+background: var(--color-primary);
+left: 50%;
+transform: translateX(-50%);
+box-shadow: 0 0 10px rgba(138, 43, 226, 0.8);
+}
+input:focus, textarea:focus {
+box-shadow: 0 0 0 2px rgba(138, 43, 226, 0.5);
+outline: none;
+}
+.custom-checkbox {
+appearance: none;
+width: 20px;
+height: 20px;
+border: 2px solid var(--color-primary);
+border-radius: 4px;
+position: relative;
+cursor: pointer;
+}
+.custom-checkbox:checked {
+background-color: var(--color-primary);
+}
+.custom-checkbox:checked::after {
+content: "✓";
+position: absolute;
+color: white;
+font-size: 14px;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+/* Utility classes to replace Tailwind */
+.container {
+width: 100%;
+max-width: 1280px;
+margin-left: auto;
+margin-right: auto;
+}
+.flex {
+display: flex;
+}
+.flex-col {
+flex-direction: column;
+}
+.flex-row {
+flex-direction: row;
+}
+.flex-wrap {
+flex-wrap: wrap;
+}
+.items-center {
+align-items: center;
+}
+.items-start {
+align-items: flex-start;
+}
+.justify-center {
+justify-content: center;
+}
+.justify-between {
+justify-content: space-between;
+}
+.gap-1 {
+gap: 0.25rem;
+}
+.gap-2 {
+gap: 0.5rem;
+}
+.gap-3 {
+gap: 0.75rem;
+}
+.gap-4 {
+gap: 1rem;
+}
+.gap-6 {
+gap: 1.5rem;
+}
+.gap-8 {
+gap: 2rem;
+}
+.gap-12 {
+gap: 3rem;
+}
+.w-full {
+width: 100%;
+}
+.h-full {
+height: 100%;
+}
+.w-1\/2 {
+width: 50%;
+}
+.w-1\/3 {
+width: 33.333333%;
+}
+.w-2\/3 {
+width: 66.666667%;
+}
+.w-1\/4 {
+width: 25%;
+}
+.w-3\/4 {
+width: 75%;
+}
+.w-2\/5 {
+width: 40%;
+}
+.w-3\/5 {
+width: 60%;
+}
+.w-5 {
+width: 1.25rem;
+}
+.w-6 {
+width: 1.5rem;
+}
+.w-8 {
+width: 2rem;
+}
+.w-10 {
+width: 2.5rem;
+}
+.w-12 {
+width: 3rem;
+}
+.w-24 {
+width: 6rem;
+}
+.h-1 {
+height: 0.25rem;
+}
+.h-2 {
+height: 0.5rem;
+}
+.h-5 {
+height: 1.25rem;
+}
+.h-6 {
+height: 1.5rem;
+}
+.h-8 {
+height: 2rem;
+}
+.h-10 {
+height: 2.5rem;
+}
+.h-12 {
+height: 3rem;
+}
+.h-16 {
+height: 4rem;
+}
+.h-48 {
+height: 12rem;
+}
+.h-80 {
+height: 20rem;
+}
+.h-96 {
+height: 24rem;
+}
+.min-h-screen {
+min-height: 100vh;
+}
+.text-center {
+text-align: center;
+}
+.text-right {
+text-align: right;
+}
+.text-sm {
+font-size: 0.875rem;
+}
+.text-lg {
+font-size: 1.125rem;
+}
+.text-xl {
+font-size: 1.25rem;
+}
+.text-2xl {
+font-size: 1.5rem;
+}
+.text-3xl {
+font-size: 1.875rem;
+}
+.text-4xl {
+font-size: 2.25rem;
+}
+.text-6xl {
+font-size: 3.75rem;
+}
+.font-medium {
+font-weight: 500;
+}
+.font-semibold {
+font-weight: 600;
+}
+.font-bold {
+font-weight: 700;
+}
+.text-white {
+color: white;
+}
+.text-primary {
+color: var(--color-primary);
+}
+.text-secondary {
+color: var(--color-secondary);
+}
+.text-gray-300 {
+color: #d1d5db;
+}
+.text-gray-400 {
+color: #9ca3af;
+}
+.text-gray-500 {
+color: #6b7280;
+}
+.bg-primary {
+background-color: var(--color-primary);
+}
+.bg-secondary {
+background-color: var(--color-secondary);
+}
+.bg-opacity-10 {
+background-opacity: 0.1;
+}
+.bg-opacity-60 {
+background-opacity: 0.6;
+}
+.bg-opacity-80 {
+background-opacity: 0.8;
+}
+.bg-opacity-90 {
+background-opacity: 0.9;
+}
+.bg-black {
+background-color: #000;
+}
+.bg-\[\#121212\] {
+background-color: #121212;
+}
+.bg-\[\#151520\] {
+background-color: #151520;
+}
+.bg-\[\#121218\] {
+background-color: #121218;
+}
+.bg-\[\#1A1A2E\] {
+background-color: #1A1A2E;
+}
+.bg-\[\#2D2D3F\] {
+background-color: #2D2D3F;
+}
+.bg-\[\#0F0F18\] {
+background-color: #0F0F18;
+}
+.bg-\[\#12121280\] {
+background-color: rgba(18, 18, 18, 0.5);
+}
+.border {
+border-width: 1px;
+}
+.border-t {
+border-top-width: 1px;
+}
+.border-b {
+border-bottom-width: 1px;
+}
+.border-\[\#2a2a3a\] {
+border-color: #2a2a3a;
+}
+.border-primary {
+border-color: var(--color-primary);
+}
+.rounded-lg {
+border-radius: var(--border-radius-lg);
+}
+.rounded-xl {
+border-radius: var(--border-radius-xl);
+}
+.rounded-full {
+border-radius: var(--border-radius-full);
+}
+.rounded-button {
+border-radius: var(--border-radius-button);
+}
+.p-1 {
+padding: 0.25rem;
+}
+.p-2 {
+padding: 0.5rem;
+}
+.p-4 {
+padding: 1rem;
+}
+.p-6 {
+padding: 1.5rem;
+}
+.p-8 {
+padding: 2rem;
+}
+.px-1 {
+padding-left: 0.25rem;
+padding-right: 0.25rem;
+}
+.px-2 {
+padding-left: 0.5rem;
+padding-right: 0.5rem;
+}
+.px-3 {
+padding-left: 0.75rem;
+padding-right: 0.75rem;
+}
+.px-4 {
+padding-left: 1rem;
+padding-right: 1rem;
+}
+.px-6 {
+padding-left: 1.5rem;
+padding-right: 1.5rem;
+}
+.py-1 {
+padding-top: 0.25rem;
+padding-bottom: 0.25rem;
+}
+.py-2 {
+padding-top: 0.5rem;
+padding-bottom: 0.5rem;
+}
+.py-3 {
+padding-top: 0.75rem;
+padding-bottom: 0.75rem;
+}
+.py-4 {
+padding-top: 1rem;
+padding-bottom: 1rem;
+}
+.py-6 {
+padding-top: 1.5rem;
+padding-bottom: 1.5rem;
+}
+.py-8 {
+padding-top: 2rem;
+padding-bottom: 2rem;
+}
+.py-12 {
+padding-top: 3rem;
+padding-bottom: 3rem;
+}
+.py-16 {
+padding-top: 4rem;
+padding-bottom: 4rem;
+}
+.py-24 {
+padding-top: 6rem;
+padding-bottom: 6rem;
+}
+.pt-8 {
+padding-top: 2rem;
+}
+.pt-16 {
+padding-top: 4rem;
+}
+.pr-8 {
+padding-right: 2rem;
+}
+.pr-12 {
+padding-right: 3rem;
+}
+.pl-12 {
+padding-left: 3rem;
+}
+.mb-1 {
+margin-bottom: 0.25rem;
+}
+.mb-2 {
+margin-bottom: 0.5rem;
+}
+.mb-3 {
+margin-bottom: 0.75rem;
+}
+.mb-4 {
+margin-bottom: 1rem;
+}
+.mb-6 {
+margin-bottom: 1.5rem;
+}
+.mb-8 {
+margin-bottom: 2rem;
+}
+.mb-12 {
+margin-bottom: 3rem;
+}
+.mb-16 {
+margin-bottom: 4rem;
+}
+.mt-1 {
+margin-top: 0.25rem;
+}
+.mt-2 {
+margin-top: 0.5rem;
+}
+.mt-4 {
+margin-top: 1rem;
+}
+.mt-6 {
+margin-top: 1.5rem;
+}
+.mt-8 {
+margin-top: 2rem;
+}
+.mt-12 {
+margin-top: 3rem;
+}
+.mr-1 {
+margin-right: 0.25rem;
+}
+.mr-2 {
+margin-right: 0.5rem;
+}
+.mr-3 {
+margin-right: 0.75rem;
+}
+.ml-auto {
+margin-left: auto;
+}
+.mx-auto {
+margin-left: auto;
+margin-right: auto;
+}
+.space-x-8 > * + * {
+margin-left: 2rem;
+}
+.space-y-3 > * + * {
+margin-top: 0.75rem;
+}
+.space-y-6 > * + * {
+margin-top: 1.5rem;
+}
+.hidden {
+display: none;
+}
+.block {
+display: block;
+}
+.inline-block {
+display: inline-block;
+}
+.relative {
+position: relative;
+}
+.absolute {
+position: absolute;
+}
+.fixed {
+position: fixed;
+}
+.inset-0 {
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+}
+.top-0 {
+top: 0;
+}
+.left-0 {
+left: 0;
+}
+.left-50 {
+left: 50%;
+}
+.z-10 {
+z-index: 10;
+}
+.z-50 {
+z-index: 50;
+}
+.overflow-hidden {
+overflow: hidden;
+}
+.whitespace-nowrap {
+white-space: nowrap;
+}
+.object-cover {
+object-fit: cover;
+}
+.object-top {
+object-position: top;
+}
+.transition-all {
+transition-property: all;
+}
+.transition-colors {
+transition-property: color, background-color, border-color;
+}
+.duration-300 {
+transition-duration: 300ms;
+}
+.hover\:underline:hover {
+text-decoration: underline;
+}
+.hover\:text-primary:hover {
+color: var(--color-primary);
+}
+.hover\:bg-primary:hover {
+background-color: var(--color-primary);
+}
+.hover\:bg-opacity-10:hover {
+background-opacity: 0.1;
+}
+.hover\:bg-opacity-80:hover {
+background-opacity: 0.8;
+}
+.hover\:bg-opacity-90:hover {
+background-opacity: 0.9;
+}
+.hover\:border-primary:hover {
+border-color: var(--color-primary);
+}
+.backdrop-blur-md {
+backdrop-filter: blur(12px);
+}
+.max-w-2xl {
+max-width: 42rem;
+}
+.max-w-4xl {
+max-width: 56rem;
+}
+.flex-1 {
+flex: 1 1 0%;
+}
+/* Icon styles */
+[class^="icon-"] {
+display: inline-block;
+width: 1em;
+height: 1em;
+background-size: contain;
+background-repeat: no-repeat;
+background-position: center;
+}
+/* Grid system */
+.grid {
+display: grid;
+}
+.grid-cols-1 {
+grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+/* Media queries */
+@media (min-width: 768px) {
+.md\:flex {
+display: flex;
+}
+.md\:hidden {
+display: none;
+}
+.md\:flex-row {
+flex-direction: row;
+}
+.md\:w-1\/2 {
+width: 50%;
+}
+.md\:w-2\/5 {
+width: 40%;
+}
+.md\:w-3\/5 {
+width: 60%;
+}
+.md\:text-right {
+text-align: right;
+}
+.md\:text-2xl {
+font-size: 1.5rem;
+}
+.md\:text-4xl {
+font-size: 2.25rem;
+}
+.md\:text-6xl {
+font-size: 3.75rem;
+}
+.md\:mb-0 {
+margin-bottom: 0;
+}
+.md\:pr-12 {
+padding-right: 3rem;
+}
+.md\:pl-12 {
+padding-left: 3rem;
+}
+.md\:ml-auto {
+margin-left: auto;
+}
+.md\:block {
+display: block;
+}
+.md\:h-96 {
+height: 24rem;
+}
+.md\:grid-cols-2 {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+}
+@media (min-width: 1024px) {
+.lg\:flex-row {
+flex-direction: row;
+}
+.lg\:w-1\/2 {
+width: 50%;
+}
+.lg\:grid-cols-3 {
+grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+}
+</style>
+</head>
+<body style="background-color: #121212; color: white; min-height: 100vh; margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+<!-- Navbar -->
+<nav style="position: fixed; top: 0; left: 0; width: 100%; z-index: 50; background-color: rgba(18, 18, 18, 0.5); backdrop-filter: blur(12px); border-bottom: 1px solid #2a2a3a;">
+<div class="container flex justify-between items-center" style="padding: 1rem 1.5rem;">
+<a href="#" class="gradient-text" style="font-size: 1.5rem; font-family: 'Pacifico', serif;">AB</a>
+<div class="hidden md:flex space-x-8">
+<a href="#about" style="color: white; transition: color 0.3s;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='white'">About</a>
+<a href="#skills" style="color: white; transition: color 0.3s;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='white'">Skills</a>
+<a href="#coursework" style="color: white; transition: color 0.3s;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='white'">Coursework</a>
+<a href="#projects" style="color: white; transition: color 0.3s;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='white'">Projects</a>
+<a href="#certifications" style="color: white; transition: color 0.3s;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='white'">Certifications</a>
+<a href="#contact" style="color: white; transition: color 0.3s;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='white'">Contact</a>
+</div>
+<div class="md:hidden w-8 h-8 flex items-center justify-center" id="menuButton">
+<i class="ri-menu-line ri-lg"></i>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="hero-bg min-h-screen flex items-center relative overflow-hidden pt-16" style="background-image: url('https://public.readdy.ai/ai/img_res/5495da358b185e66d0470046aa991af1.jpg');">
+<div class="absolute inset-0 bg-black bg-opacity-60"></div>
+<div class="container mx-auto px-6 py-24 relative z-10">
+<div class="flex flex-col md:flex-row items-center">
+<div class="md:w-3/5 mb-12 md:mb-0">
+<h1 class="text-4xl md:text-6xl font-bold mb-4 neon-text">
+Abdoulie Balisa
+</h1>
+<div class="h-1 w-24 bg-gradient-to-r from-primary to-secondary mb-6"></div>
+<h2 class="text-xl md:text-2xl mb-6 typing-animation">
+<span class="gradient-text font-semibold">Data. Security. Insight. Impact.</span>
+</h2>
+<p class="text-gray-300 mb-8 max-w-2xl">
+Gambian-born Data Scientist, Cybersecurity Enthusiast, and Machine Learning Engineer.
+Mastercard Foundation Scholar at KNUST with a passion for leveraging data to solve
+complex problems and create meaningful impact across Africa.
+</p>
+<div class="flex flex-wrap gap-4">
+<a href="#projects" class="px-6 py-3 bg-primary text-white font-medium !rounded-button hover:bg-opacity-90 transition-all duration-300 pulsing whitespace-nowrap">
+Explore My Work
+</a>
+<a href="#" class="px-6 py-3 border border-primary text-primary font-medium !rounded-button hover:bg-primary hover:bg-opacity-10 transition-all duration-300 whitespace-nowrap">
+Download Resume
+</a>
+</div>
+</div>
+<div class="md:w-2/5 floating">
+<div class="relative w-full h-80 md:h-96">
+<div class="absolute inset-0 rounded-xl overflow-hidden neon-border" style="background-image: url('https://public.readdy.ai/ai/img_res/bd0a0c435bbec7051f62eb73de6ae796.jpg'); background-size: cover; background-position: center;"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section id="about" class="py-24 bg-[#151520]">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">About Me</h2>
+<div class="h-1 w-24 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
+</div>
+<div class="flex flex-col md:flex-row gap-12 items-center">
+<div class="md:w-1/2">
+<div class="rounded-xl overflow-hidden neon-border">
+<img src="https://public.readdy.ai/ai/img_res/42799ddd5f6b52c30b22584d644d72d3.jpg" alt="Abdoulie Balisa" class="w-full h-auto object-cover">
+</div>
+</div>
+<div class="md:w-1/2">
+<h3 class="text-2xl font-bold mb-6 neon-text">My Journey</h3>
+<p class="text-gray-300 mb-6">
+Born and raised in Gambia, my passion for data science and technology began when I first discovered how data could be used to solve real-world problems in my community. This curiosity led me to pursue higher education at Kwame Nkrumah University of Science and Technology (KNUST) in Ghana, where I was honored to be selected as a Mastercard Foundation Scholar.
+</p>
+<p class="text-gray-300 mb-6">
+My academic journey has been complemented by hands-on experience in data analysis, machine learning, and cybersecurity. I believe in the power of data to drive innovation and create positive change, especially in emerging economies across Africa.
+</p>
+<p class="text-gray-300 mb-8">
+Today, I focus on developing data-driven solutions that address critical challenges in various sectors, from healthcare to finance, always with an eye toward security, scalability, and social impact.
+</p>
+<div class="flex flex-wrap gap-4">
+<div class="px-4 py-2 bg-[#1E1E2E] rounded-lg flex items-center gap-2">
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-graduation-cap-fill ri-lg"></i>
+</div>
+<span>KNUST Graduate</span>
+</div>
+<div class="px-4 py-2 bg-[#1E1E2E] rounded-lg flex items-center gap-2">
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-award-fill ri-lg"></i>
+</div>
+<span>Mastercard Scholar</span>
+</div>
+<div class="px-4 py-2 bg-[#1E1E2E] rounded-lg flex items-center gap-2">
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-global-fill ri-lg"></i>
+</div>
+<span>Gambian Native</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Section -->
+<section id="skills" class="py-24 bg-[#121218] cyberpunk-grid">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">Technical Skills</h2>
+<div class="h-1 w-24 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
+<p class="text-gray-300 mt-4 max-w-2xl mx-auto">
+My technical toolkit spans data science, machine learning, and front-end development,
+allowing me to approach problems from multiple angles and create end-to-end solutions.
+</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Left Column -->
+<div>
+<h3 class="text-2xl font-bold mb-8 flex items-center">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-lg mr-3">
+<i class="ri-code-s-slash-line ri-xl text-primary"></i>
+</div>
+<span>Programming Languages</span>
+</h3>
+<div class="space-y-6">
+<!-- Python -->
+<div class="group">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-8 h-8 flex items-center justify-center text-primary bg-[#1A1A2E] rounded-lg group-hover:bg-primary group-hover:text-white transition-all duration-300">
+<i class="ri-python-fill ri-lg"></i>
+</div>
+<div class="flex-1">
+<div class="flex justify-between">
+<span class="font-medium">Python</span>
+<span class="text-primary">95%</span>
+</div>
+</div>
+</div>
+<div class="h-2 bg-[#2D2D3F] rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-500 group-hover:shadow-[0_0_10px_rgba(138,43,226,0.5)]" style="width: 95%"></div>
+</div>
+</div>
+<!-- R -->
+<div class="group">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-8 h-8 flex items-center justify-center text-primary bg-[#1A1A2E] rounded-lg group-hover:bg-primary group-hover:text-white transition-all duration-300">
+<i class="ri-code-line ri-lg"></i>
+</div>
+<div class="flex-1">
+<div class="flex justify-between">
+<span class="font-medium">R</span>
+<span class="text-primary">85%</span>
+</div>
+</div>
+</div>
+<div class="h-2 bg-[#2D2D3F] rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-500 group-hover:shadow-[0_0_10px_rgba(138,43,226,0.5)]" style="width: 85%"></div>
+</div>
+</div>
+<!-- Java -->
+<div class="group">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-8 h-8 flex items-center justify-center text-primary bg-[#1A1A2E] rounded-lg group-hover:bg-primary group-hover:text-white transition-all duration-300">
+<i class="ri-java-fill ri-lg"></i>
+</div>
+<div class="flex-1">
+<div class="flex justify-between">
+<span class="font-medium">Java</span>
+<span class="text-primary">50%</span>
+</div>
+</div>
+</div>
+<div class="h-2 bg-[#2D2D3F] rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-500 group-hover:shadow-[0_0_10px_rgba(138,43,226,0.5)]" style="width: 50%"></div>
+</div>
+</div>
+<!-- MATLAB -->
+<div class="group">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-8 h-8 flex items-center justify-center text-primary bg-[#1A1A2E] rounded-lg group-hover:bg-primary group-hover:text-white transition-all duration-300">
+<i class="ri-function-line ri-lg"></i>
+</div>
+<div class="flex-1">
+<div class="flex justify-between">
+<span class="font-medium">MATLAB</span>
+<span class="text-primary">78%</span>
+</div>
+</div>
+</div>
+<div class="h-2 bg-[#2D2D3F] rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-500 group-hover:shadow-[0_0_10px_rgba(138,43,226,0.5)]" style="width: 78%"></div>
+</div>
+</div>
+<!-- Excel -->
+<div class="group">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-8 h-8 flex items-center justify-center text-primary bg-[#1A1A2E] rounded-lg group-hover:bg-primary group-hover:text-white transition-all duration-300">
+<i class="ri-file-excel-2-line ri-lg"></i>
+</div>
+<div class="flex-1">
+<div class="flex justify-between">
+<span class="font-medium">Excel</span>
+<span class="text-primary">92%</span>
+</div>
+</div>
+</div>
+<div class="h-2 bg-[#2D2D3F] rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-500 group-hover:shadow-[0_0_10px_rgba(138,43,226,0.5)]" style="width: 92%"></div>
+</div>
+</div>
+<!-- SAS -->
+<div class="group">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-8 h-8 flex items-center justify-center text-primary bg-[#1A1A2E] rounded-lg group-hover:bg-primary group-hover:text-white transition-all duration-300">
+<i class="ri-bar-chart-2-line ri-lg"></i>
+</div>
+<div class="flex-1">
+<div class="flex justify-between">
+<span class="font-medium">SAS</span>
+<span class="text-primary">75%</span>
+</div>
+</div>
+</div>
+<div class="h-2 bg-[#2D2D3F] rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-500 group-hover:shadow-[0_0_10px_rgba(138,43,226,0.5)]" style="width: 75%"></div>
+</div>
+</div>
+<!-- SPSS -->
+<div class="group">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-8 h-8 flex items-center justify-center text-primary bg-[#1A1A2E] rounded-lg group-hover:bg-primary group-hover:text-white transition-all duration-300">
+<i class="ri-pie-chart-2-line ri-lg"></i>
+</div>
+<div class="flex-1">
+<div class="flex justify-between">
+<span class="font-medium">SPSS</span>
+<span class="text-primary">82%</span>
+</div>
+</div>
+</div>
+<div class="h-2 bg-[#2D2D3F] rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-500 group-hover:shadow-[0_0_10px_rgba(138,43,226,0.5)]" style="width: 82%"></div>
+</div>
+</div>
+<!-- SQL -->
+<div class="group">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-8 h-8 flex items-center justify-center text-primary bg-[#1A1A2E] rounded-lg group-hover:bg-primary group-hover:text-white transition-all duration-300">
+<i class="ri-database-2-line ri-lg"></i>
+</div>
+<div class="flex-1">
+<div class="flex justify-between">
+<span class="font-medium">SQL</span>
+<span class="text-primary">90%</span>
+</div>
+</div>
+</div>
+<div class="h-2 bg-[#2D2D3F] rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-500 group-hover:shadow-[0_0_10px_rgba(138,43,226,0.5)]" style="width: 90%"></div>
+</div>
+</div>
+</div>
+<div class="mt-12">
+<h3 class="text-2xl font-bold mb-8 flex items-center">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-lg mr-3">
+<i class="ri-cpu-line ri-xl text-primary"></i>
+</div>
+<span>Technical Expertise</span>
+</h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-[#1A1A2E] p-4 rounded-xl border border-[#2a2a3a] hover:border-primary transition-all duration-300 flex items-center gap-3 group hover:transform hover:scale-105">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
+<i class="ri-robot-line ri-lg"></i>
+</div>
+<span class="font-medium">Machine Learning</span>
+</div>
+<div class="bg-[#1A1A2E] p-4 rounded-xl border border-[#2a2a3a] hover:border-primary transition-all duration-300 flex items-center gap-3 group hover:transform hover:scale-105">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
+<i class="ri-shield-keyhole-line ri-lg"></i>
+</div>
+<span class="font-medium">Cybersecurity</span>
+</div>
+<div class="bg-[#1A1A2E] p-4 rounded-xl border border-[#2a2a3a] hover:border-primary transition-all duration-300 flex items-center gap-3 group hover:transform hover:scale-105">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
+<i class="ri-bubble-chart-line ri-lg"></i>
+</div>
+<span class="font-medium">Data Analysis</span>
+</div>
+<div class="bg-[#1A1A2E] p-4 rounded-xl border border-[#2a2a3a] hover:border-primary transition-all duration-300 flex items-center gap-3 group hover:transform hover:scale-105">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
+<i class="ri-customer-service-line ri-lg"></i>
+</div>
+<span class="font-medium">IT Help Desk</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column -->
+<div>
+<h3 class="text-2xl font-bold mb-8 flex items-center">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-lg mr-3">
+<i class="ri-layout-line ri-xl text-primary"></i>
+</div>
+<span>Front-End Development</span>
+</h3>
+<div class="space-y-6">
+<!-- HTML5 -->
+<div class="group">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-8 h-8 flex items-center justify-center text-primary bg-[#1A1A2E] rounded-lg group-hover:bg-primary group-hover:text-white transition-all duration-300">
+<i class="ri-html5-fill ri-lg"></i>
+</div>
+<div class="flex-1">
+<div class="flex justify-between">
+<span class="font-medium">HTML5</span>
+<span class="text-primary">92%</span>
+</div>
+</div>
+</div>
+<div class="h-2 bg-[#2D2D3F] rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-500 group-hover:shadow-[0_0_10px_rgba(138,43,226,0.5)]" style="width: 92%"></div>
+</div>
+</div>
+<!-- CSS3 -->
+<div class="group">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-8 h-8 flex items-center justify-center text-primary bg-[#1A1A2E] rounded-lg group-hover:bg-primary group-hover:text-white transition-all duration-300">
+<i class="ri-css3-fill ri-lg"></i>
+</div>
+<div class="flex-1">
+<div class="flex justify-between">
+<span class="font-medium">CSS3</span>
+<span class="text-primary">88%</span>
+</div>
+</div>
+</div>
+<div class="h-2 bg-[#2D2D3F] rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-500 group-hover:shadow-[0_0_10px_rgba(138,43,226,0.5)]" style="width: 88%"></div>
+</div>
+</div>
+<!-- JavaScript -->
+<div class="group">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-8 h-8 flex items-center justify-center text-primary bg-[#1A1A2E] rounded-lg group-hover:bg-primary group-hover:text-white transition-all duration-300">
+<i class="ri-javascript-fill ri-lg"></i>
+</div>
+<div class="flex-1">
+<div class="flex justify-between">
+<span class="font-medium">JavaScript</span>
+<span class="text-primary">85%</span>
+</div>
+</div>
+</div>
+<div class="h-2 bg-[#2D2D3F] rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-500 group-hover:shadow-[0_0_10px_rgba(138,43,226,0.5)]" style="width: 85%"></div>
+</div>
+</div>
+<!-- React -->
+<div class="group">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-8 h-8 flex items-center justify-center text-primary bg-[#1A1A2E] rounded-lg group-hover:bg-primary group-hover:text-white transition-all duration-300">
+<i class="ri-reactjs-fill ri-lg"></i>
+</div>
+<div class="flex-1">
+<div class="flex justify-between">
+<span class="font-medium">React</span>
+<span class="text-primary">80%</span>
+</div>
+</div>
+</div>
+<div class="h-2 bg-[#2D2D3F] rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-500 group-hover:shadow-[0_0_10px_rgba(138,43,226,0.5)]" style="width: 80%"></div>
+</div>
+</div>
+<!-- Tailwind CSS -->
+<div class="group">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-8 h-8 flex items-center justify-center text-primary bg-[#1A1A2E] rounded-lg group-hover:bg-primary group-hover:text-white transition-all duration-300">
+<i class="ri-wind-line ri-lg"></i>
+</div>
+<div class="flex-1">
+<div class="flex justify-between">
+<span class="font-medium">Tailwind CSS</span>
+<span class="text-primary">85%</span>
+</div>
+</div>
+</div>
+<div class="h-2 bg-[#2D2D3F] rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-500 group-hover:shadow-[0_0_10px_rgba(138,43,226,0.5)]" style="width: 85%"></div>
+</div>
+</div>
+</div>
+<div class="mt-12">
+<h3 class="text-2xl font-bold mb-8 flex items-center">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-lg mr-3">
+<i class="ri-bar-chart-box-line ri-xl text-primary"></i>
+</div>
+<span>Data Visualization</span>
+</h3>
+<div class="grid grid-cols-1 gap-4">
+<div class="bg-[#1A1A2E] p-6 rounded-xl border border-[#2a2a3a] hover:border-primary transition-all duration-300 group hover:transform hover:scale-[1.02]">
+<h4 class="text-lg font-bold mb-4 flex items-center gap-2">
+<div class="w-8 h-8 flex items-center justify-center text-primary bg-primary bg-opacity-10 rounded-lg group-hover:bg-primary group-hover:text-white transition-all duration-300">
+<i class="ri-gallery-line ri-lg"></i>
+</div>
+<span>Featured Projects</span>
+</h4>
+<div class="grid grid-cols-2 gap-4">
+<a href="https://github.com/abdoulie-balisa/data-viz-project" target="_blank" class="bg-[#0F0F18] p-3 rounded-lg flex flex-col items-center hover:bg-primary hover:bg-opacity-10 transition-all duration-300">
+<div class="w-8 h-8 flex items-center justify-center text-primary mb-2">
+<i class="ri-github-fill ri-lg"></i>
+</div>
+<span class="text-sm text-center">Data Visualization Dashboard</span>
+</a>
+<a href="https://github.com/abdoulie-balisa/excel-dashboards" target="_blank" class="bg-[#0F0F18] p-3 rounded-lg flex flex-col items-center hover:bg-primary hover:bg-opacity-10 transition-all duration-300">
+<div class="w-8 h-8 flex items-center justify-center text-primary mb-2">
+<i class="ri-file-excel-2-line ri-lg"></i>
+</div>
+<span class="text-sm text-center">Excel Dashboards</span>
+</a>
+<a href="https://github.com/abdoulie-balisa/power-bi-dashboards" target="_blank" class="bg-[#0F0F18] p-3 rounded-lg flex flex-col items-center hover:bg-primary hover:bg-opacity-10 transition-all duration-300">
+<div class="w-8 h-8 flex items-center justify-center text-primary mb-2">
+<i class="ri-bar-chart-box-line ri-lg"></i>
+</div>
+<span class="text-sm text-center">Power BI Dashboards</span>
+</a>
+<a href="https://github.com/abdoulie-balisa/tableau-dashboards" target="_blank" class="bg-[#0F0F18] p-3 rounded-lg flex flex-col items-center hover:bg-primary hover:bg-opacity-10 transition-all duration-300">
+<div class="w-8 h-8 flex items-center justify-center text-primary mb-2">
+<i class="ri-dashboard-line ri-lg"></i>
+</div>
+<span class="text-sm text-center">Tableau Dashboards</span>
+</a>
+</div>
+</div>
+<div class="bg-[#1A1A2E] p-6 rounded-xl border border-[#2a2a3a] hover:border-primary transition-all duration-300 group hover:transform hover:scale-[1.02]">
+<h4 class="text-lg font-bold mb-4 flex items-center gap-2">
+<div class="w-8 h-8 flex items-center justify-center text-primary bg-primary bg-opacity-10 rounded-lg group-hover:bg-primary group-hover:text-white transition-all duration-300">
+<i class="ri-tools-line ri-lg"></i>
+</div>
+<span>Tools & Libraries</span>
+</h4>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2 bg-[#0F0F18] rounded-full text-sm hover:bg-primary hover:bg-opacity-10 transition-all duration-300 cursor-default">Plotly</span>
+<span class="px-4 py-2 bg-[#0F0F18] rounded-full text-sm hover:bg-primary hover:bg-opacity-10 transition-all duration-300 cursor-default">Tableau</span>
+<span class="px-4 py-2 bg-[#0F0F18] rounded-full text-sm hover:bg-primary hover:bg-opacity-10 transition-all duration-300 cursor-default">Power BI</span>
+<span class="px-4 py-2 bg-[#0F0F18] rounded-full text-sm hover:bg-primary hover:bg-opacity-10 transition-all duration-300 cursor-default">Matplotlib</span>
+<span class="px-4 py-2 bg-[#0F0F18] rounded-full text-sm hover:bg-primary hover:bg-opacity-10 transition-all duration-300 cursor-default">Seaborn</span>
+<span class="px-4 py-2 bg-[#0F0F18] rounded-full text-sm hover:bg-primary hover:bg-opacity-10 transition-all duration-300 cursor-default">ggplot2</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Coursework Section -->
+<section id="coursework" class="py-24 bg-[#151520]">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">📚 Coursework & Learning Journey</h2>
+<div class="h-1 w-24 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
+<p class="text-gray-300 mt-4 max-w-2xl mx-auto">
+As part of my Data Science and Machine Learning journey, I've completed a diverse set of courses that blend theory, computation, and real-world application.
+</p>
+</div>
+<h3 class="text-xl font-bold mb-6 text-center">University Coursework</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+<!-- Left Column -->
+<div class="space-y-6">
+<div class="bg-[#1A1A2E] p-6 rounded-xl border border-[#2a2a3a] hover:border-primary transition-all duration-300 card-hover">
+<h3 class="text-xl font-bold mb-3 flex items-center gap-2">
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-bar-chart-grouped-line"></i>
+</div>
+Statistical Inference
+</h3>
+<p class="text-gray-400">
+Covered estimation, hypothesis testing, and distributions — both theoretical and applied.
+</p>
+</div>
+<div class="bg-[#1A1A2E] p-6 rounded-xl border border-[#2a2a3a] hover:border-primary transition-all duration-300 card-hover">
+<h3 class="text-xl font-bold mb-3 flex items-center gap-2">
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-dice-line"></i>
+</div>
+Advanced Probability & Stochastic Processes
+</h3>
+<p class="text-gray-400">
+Application of stochastic processes in modeling actuarial problems related to random phenomena.
+</p>
+</div>
+<div class="bg-[#1A1A2E] p-6 rounded-xl border border-[#2a2a3a] hover:border-primary transition-all duration-300 card-hover">
+<h3 class="text-xl font-bold mb-3 flex items-center gap-2">
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-line-chart-line"></i>
+</div>
+Regression Analysis
+</h3>
+<p class="text-gray-400">
+Linear, multiple, and logistic regression techniques for predictive modeling and inference.
+</p>
+</div>
+</div>
+<!-- Right Column -->
+<div class="space-y-6">
+<div class="bg-[#1A1A2E] p-6 rounded-xl border border-[#2a2a3a] hover:border-primary transition-all duration-300 card-hover">
+<h3 class="text-xl font-bold mb-3 flex items-center gap-2">
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-bubble-chart-line"></i>
+</div>
+Multivariate Analysis
+</h3>
+<p class="text-gray-400">
+Techniques for analyzing relationships between multiple variables simultaneously.
+</p>
+</div>
+<div class="bg-[#1A1A2E] p-6 rounded-xl border border-[#2a2a3a] hover:border-primary transition-all duration-300 card-hover">
+<h3 class="text-xl font-bold mb-3 flex items-center gap-2">
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-time-line"></i>
+</div>
+Time Series Analysis
+</h3>
+<p class="text-gray-400">
+Methods for analyzing time-dependent data, forecasting, and trend identification.
+</p>
+</div>
+<div class="bg-[#1A1A2E] p-6 rounded-xl border border-[#2a2a3a] hover:border-primary transition-all duration-300 card-hover">
+<h3 class="text-xl font-bold mb-3 flex items-center gap-2">
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-survey-line"></i>
+</div>
+Survey Sampling
+</h3>
+<p class="text-gray-400">
+Design and analysis of surveys, sampling techniques, and statistical inference from samples.
+</p>
+</div>
+</div>
+</div>
+<div class="mb-12">
+<h3 class="text-xl font-bold mb-6 text-center">Bootcamp & Courses</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- TechUp Africa -->
+<div class="bg-[#1A1A2E] p-6 rounded-xl border border-[#2a2a3a] hover:border-primary transition-all duration-300 card-hover">
+<h3 class="text-xl font-bold mb-3 flex items-center gap-2">
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-code-box-line"></i>
+</div>
+TechUp Africa (DataCamp)
+</h3>
+<p class="text-gray-400 mb-3">
+Focused on Python programming, Data Visualization, Machine Learning, and Data Manipulation.
+</p>
+<p class="text-gray-400">
+Covered essential libraries like Pandas, Matplotlib, Seaborn, and Scikit-learn.
+</p>
+</div>
+<!-- Machine Learning Bootcamp -->
+<div class="bg-[#1A1A2E] p-6 rounded-xl border border-[#2a2a3a] hover:border-primary transition-all duration-300 card-hover">
+<h3 class="text-xl font-bold mb-3 flex items-center gap-2">
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-robot-line"></i>
+</div>
+Machine Learning Bootcamp
+</h3>
+<p class="text-gray-400 mb-3">
+Practical exposure to supervised and unsupervised learning techniques, model evaluation, and data preprocessing.
+</p>
+</div>
+<!-- Axi Africa -->
+<div class="bg-[#1A1A2E] p-6 rounded-xl border border-[#2a2a3a] hover:border-primary transition-all duration-300 card-hover">
+<h3 class="text-xl font-bold mb-3 flex items-center gap-2">
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-database-2-line"></i>
+</div>
+Axi Africa Data Science
+</h3>
+<p class="text-gray-400 mb-3">
+A comprehensive curriculum on data wrangling, statistical analysis, predictive modeling, and hands-on projects in machine learning.
+</p>
+<p class="text-gray-400">
+Hands-on projects with real-world datasets and business problems.
+</p>
+</div>
+</div>
+</div>
+<div class="mb-12">
+<h3 class="text-xl font-bold mb-6 text-center">Actuarial Courses</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Introduction to Actuarial Science -->
+<div class="bg-[#1A1A2E] p-6 rounded-xl border border-[#2a2a3a] hover:border-primary transition-all duration-300 card-hover">
+<h3 class="text-xl font-bold mb-3 flex items-center gap-2">
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-calculator-line"></i>
+</div>
+Introduction to Actuarial Science
+</h3>
+<p class="text-gray-400">
+Basics of actuarial principles, including life insurance, pensions, and financial modeling.
+</p>
+</div>
+<!-- Risk Theory & Modeling -->
+<div class="bg-[#1A1A2E] p-6 rounded-xl border border-[#2a2a3a] hover:border-primary transition-all duration-300 card-hover">
+<h3 class="text-xl font-bold mb-3 flex items-center gap-2">
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-funds-line"></i>
+</div>
+Risk Theory & Modeling
+</h3>
+<p class="text-gray-400">
+Focus on probability models for assessing risk in finance and insurance.
+</p>
+</div>
+<!-- Life Contingencies -->
+<div class="bg-[#1A1A2E] p-6 rounded-xl border border-[#2a2a3a] hover:border-primary transition-all duration-300 card-hover">
+<h3 class="text-xl font-bold mb-3 flex items-center gap-2">
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-heart-pulse-line"></i>
+</div>
+Life Contingencies
+</h3>
+<p class="text-gray-400">
+Explored mortality rates, life expectancy models, and other actuarial tables to assess life insurance liabilities.
+</p>
+</div>
+<!-- Financial Mathematics -->
+<div class="bg-[#1A1A2E] p-6 rounded-xl border border-[#2a2a3a] hover:border-primary transition-all duration-300 card-hover">
+<h3 class="text-xl font-bold mb-3 flex items-center gap-2">
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-money-dollar-circle-line"></i>
+</div>
+Financial Mathematics
+</h3>
+<p class="text-gray-400">
+Application of mathematical principles to calculate present and accumulated values for various streams of cash flows.
+</p>
+</div>
+</div>
+</div>
+<h3 class="text-xl font-bold mb-6 text-center">Key Books I've Read</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+<!-- Book 1 -->
+<div class="bg-[#1A1A2E] p-6 rounded-xl border border-[#2a2a3a] hover:border-primary transition-all duration-300 card-hover">
+<h3 class="text-xl font-bold mb-3 flex items-center gap-2">
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-book-2-line"></i>
+</div>
+Data Science for Business
+</h3>
+<p class="text-gray-400 mb-2">Foster Provost & Tom Fawcett</p>
+<p class="text-gray-400">
+A guide to applying data science techniques in real business scenarios.
+</p>
+</div>
+<!-- Book 2 -->
+<div class="bg-[#1A1A2E] p-6 rounded-xl border border-[#2a2a3a] hover:border-primary transition-all duration-300 card-hover">
+<h3 class="text-xl font-bold mb-3 flex items-center gap-2">
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-book-2-line"></i>
+</div>
+Doing Data Science
+</h3>
+<p class="text-gray-400 mb-2">Cathy O'Neil & Rachel Schutt</p>
+<p class="text-gray-400">
+Insights on the practical application of data science in diverse fields.
+</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Book 3 -->
+<div class="bg-[#1A1A2E] p-6 rounded-xl border border-[#2a2a3a] hover:border-primary transition-all duration-300 card-hover">
+<h3 class="text-xl font-bold mb-3 flex items-center gap-2">
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-book-2-line"></i>
+</div>
+Python for Data Analysis
+</h3>
+<p class="text-gray-400 mb-2">Wes McKinney</p>
+<p class="text-gray-400">
+Mastery of data wrangling, analysis, and visualization using Python's powerful libraries.
+</p>
+</div>
+<!-- Book 4 -->
+<div class="bg-[#1A1A2E] p-6 rounded-xl border border-[#2a2a3a] hover:border-primary transition-all duration-300 card-hover">
+<h3 class="text-xl font-bold mb-3 flex items-center gap-2">
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-book-2-line"></i>
+</div>
+Data Science from Scratch
+</h3>
+<p class="text-gray-400 mb-2">Joel Grus</p>
+<p class="text-gray-400">
+A hands-on approach to building data science tools from the ground up.
+</p>
+</div>
+<!-- Book 5 -->
+<div class="bg-[#1A1A2E] p-6 rounded-xl border border-[#2a2a3a] hover:border-primary transition-all duration-300 card-hover">
+<h3 class="text-xl font-bold mb-3 flex items-center gap-2">
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-book-2-line"></i>
+</div>
+Designing Data-Intensive Applications
+</h3>
+<p class="text-gray-400 mb-2">Martin Kleppmann</p>
+<p class="text-gray-400">
+Focused on designing systems that handle large volumes of data efficiently.
+</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Section -->
+<section id="projects" class="py-24 bg-[#151520]">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">Featured Projects</h2>
+<div class="h-1 w-24 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
+<p class="text-gray-300 mt-4 max-w-2xl mx-auto">
+A selection of my data science and machine learning projects that showcase my technical skills and problem-solving approach.
+</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Project 1 -->
+<div class="bg-[#1A1A2E] rounded-xl overflow-hidden border border-[#2a2a3a] hover:border-primary transition-all duration-300 card-hover">
+<div class="h-48 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/77312b7c23d4790ceec48ac890332b9d.jpg" alt="Restaurant Analytics Dashboard" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2">Restaurant Analytics Dashboard</h3>
+<p class="text-gray-400 mb-4">
+An interactive dashboard built with Python and Power BI that helps restaurant owners track sales, customer behavior, and inventory in real-time.
+</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 bg-primary bg-opacity-10 text-primary text-sm rounded-full">Python</span>
+<span class="px-3 py-1 bg-primary bg-opacity-10 text-primary text-sm rounded-full">Power BI</span>
+<span class="px-3 py-1 bg-primary bg-opacity-10 text-primary text-sm rounded-full">SQL</span>
+</div>
+<div class="flex justify-between">
+<a href="#" class="text-primary flex items-center gap-1 hover:underline">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-github-fill"></i>
+</div>
+<span>View Code</span>
+</a>
+<a href="#" class="text-secondary flex items-center gap-1 hover:underline">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-external-link-line"></i>
+</div>
+<span>Live Demo</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="bg-[#1A1A2E] rounded-xl overflow-hidden border border-[#2a2a3a] hover:border-primary transition-all duration-300 card-hover">
+<div class="h-48 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/7562758996c147383a81fc8dfe08a49d.jpg" alt="Nobel Prize Analysis" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2">Nobel Prize Analysis</h3>
+<p class="text-gray-400 mb-4">
+A comprehensive analysis of Nobel Prize winners from 1901-2023, exploring patterns in gender, nationality, and research fields using R and interactive visualizations.
+</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 bg-primary bg-opacity-10 text-primary text-sm rounded-full">R</span>
+<span class="px-3 py-1 bg-primary bg-opacity-10 text-primary text-sm rounded-full">ggplot2</span>
+<span class="px-3 py-1 bg-primary bg-opacity-10 text-primary text-sm rounded-full">Shiny</span>
+</div>
+<div class="flex justify-between">
+<a href="#" class="text-primary flex items-center gap-1 hover:underline">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-github-fill"></i>
+</div>
+<span>View Code</span>
+</a>
+<a href="#" class="text-secondary flex items-center gap-1 hover:underline">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-external-link-line"></i>
+</div>
+<span>Live Demo</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="bg-[#1A1A2E] rounded-xl overflow-hidden border border-[#2a2a3a] hover:border-primary transition-all duration-300 card-hover">
+<div class="h-48 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/527da1291ed3cd84436455b83aaf2a79.jpg" alt="Twitter UI/UX Review" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2">Twitter UI/UX Review</h3>
+<p class="text-gray-400 mb-4">
+A data-driven analysis of Twitter's user interface and experience, with recommendations for improvements based on user behavior metrics and sentiment analysis.
+</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 bg-primary bg-opacity-10 text-primary text-sm rounded-full">Python</span>
+<span class="px-3 py-1 bg-primary bg-opacity-10 text-primary text-sm rounded-full">NLTK</span>
+<span class="px-3 py-1 bg-primary bg-opacity-10 text-primary text-sm rounded-full">Tableau</span>
+</div>
+<div class="flex justify-between">
+<a href="#" class="text-primary flex items-center gap-1 hover:underline">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-github-fill"></i>
+</div>
+<span>View Code</span>
+</a>
+<a href="#" class="text-secondary flex items-center gap-1 hover:underline">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-file-pdf-line"></i>
+</div>
+<span>View Report</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="text-center mt-12">
+<a href="#" class="px-6 py-3 bg-[#1A1A2E] border border-primary text-primary font-medium !rounded-button hover:bg-primary hover:bg-opacity-10 transition-all duration-300 inline-block whitespace-nowrap">
+View All Projects
+</a>
+</div>
+</div>
+</section>
+<!-- Certifications & Experience -->
+<section id="certifications" class="py-24 bg-[#121218] cyberpunk-grid">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">Certifications & Experience</h2>
+<div class="h-1 w-24 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
+<p class="text-gray-300 mt-4 max-w-2xl mx-auto">
+My professional journey includes specialized training and hands-on experience in data science and cybersecurity.
+</p>
+</div>
+<div class="relative max-w-4xl mx-auto">
+<div class="timeline-line hidden md:block"></div>
+<!-- Timeline Item 1 -->
+<div class="flex flex-col md:flex-row mb-12 relative">
+<div class="timeline-dot hidden md:block" style="top: 0;"></div>
+<div class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0">
+<div class="bg-[#1A1A2E] p-6 rounded-xl border border-[#2a2a3a] hover:border-primary transition-all duration-300 card-hover md:ml-auto">
+<h3 class="text-xl font-bold mb-2">DataCamp Certification</h3>
+<p class="text-gray-400 mb-2">Data Scientist Professional Track</p>
+<p class="text-primary">January 2023 - April 2023</p>
+</div>
+</div>
+<div class="md:w-1/2 md:pl-12"></div>
+</div>
+<!-- Timeline Item 2 -->
+<div class="flex flex-col md:flex-row mb-12 relative">
+<div class="timeline-dot hidden md:block" style="top: 0;"></div>
+<div class="md:w-1/2 md:pr-12"></div>
+<div class="md:w-1/2 md:pl-12">
+<div class="bg-[#1A1A2E] p-6 rounded-xl border border-[#2a2a3a] hover:border-primary transition-all duration-300 card-hover">
+<h3 class="text-xl font-bold mb-2">Axi Africa</h3>
+<p class="text-gray-400 mb-2">Data Science Intern</p>
+<p class="text-primary">June 2022 - December 2022</p>
+</div>
+</div>
+</div>
+<!-- Timeline Item 3 -->
+<div class="flex flex-col md:flex-row mb-12 relative">
+<div class="timeline-dot hidden md:block" style="top: 0;"></div>
+<div class="md:w-1/2 md:pr-12 md:text-right">
+<div class="bg-[#1A1A2E] p-6 rounded-xl border border-[#2a2a3a] hover:border-primary transition-all duration-300 card-hover md:ml-auto">
+<h3 class="text-xl font-bold mb-2">KNUST Data Science Club</h3>
+<p class="text-gray-400 mb-2">Club President</p>
+<p class="text-primary">September 2021 - May 2022</p>
+</div>
+</div>
+<div class="md:w-1/2 md:pl-12"></div>
+</div>
+<!-- Timeline Item 4 -->
+<div class="flex flex-col md:flex-row relative">
+<div class="timeline-dot hidden md:block" style="top: 0;"></div>
+<div class="md:w-1/2 md:pr-12"></div>
+<div class="md:w-1/2 md:pl-12">
+<div class="bg-[#1A1A2E] p-6 rounded-xl border border-[#2a2a3a] hover:border-primary transition-all duration-300 card-hover">
+<h3 class="text-xl font-bold mb-2">Cisco Cybersecurity</h3>
+<p class="text-gray-400 mb-2">Makaton IT Scholarship Program</p>
+<p class="text-primary">March 2021 - June 2021</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section id="contact" class="py-24 bg-[#151520]">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">Get In Touch</h2>
+<div class="h-1 w-24 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
+<p class="text-gray-300 mt-4 max-w-2xl mx-auto">
+Have a project in mind or want to discuss potential collaborations? I'd love to hear from you!
+</p>
+</div>
+<div class="flex flex-col lg:flex-row gap-12">
+<div class="lg:w-1/2">
+<form class="space-y-6">
+<div>
+<label for="name" class="block text-sm font-medium text-gray-300 mb-2">Your Name</label>
+<input type="text" id="name" class="w-full px-4 py-3 bg-[#1A1A2E] border border-[#2a2a3a] rounded-lg focus:border-primary text-white" placeholder="John Doe">
+</div>
+<div>
+<label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email Address</label>
+<input type="email" id="email" class="w-full px-4 py-3 bg-[#1A1A2E] border border-[#2a2a3a] rounded-lg focus:border-primary text-white" placeholder="johndoe@example.com">
+</div>
+<div>
+<label for="subject" class="block text-sm font-medium text-gray-300 mb-2">Subject</label>
+<input type="text" id="subject" class="w-full px-4 py-3 bg-[#1A1A2E] border border-[#2a2a3a] rounded-lg focus:border-primary text-white" placeholder="Project Inquiry">
+</div>
+<div>
+<label for="message" class="block text-sm font-medium text-gray-300 mb-2">Your Message</label>
+<textarea id="message" rows="5" class="w-full px-4 py-3 bg-[#1A1A2E] border border-[#2a2a3a] rounded-lg focus:border-primary text-white" placeholder="Tell me about your project or inquiry..."></textarea>
+</div>
+<div class="flex items-center">
+<input type="checkbox" id="newsletter" class="custom-checkbox mr-3">
+<label for="newsletter" class="text-sm text-gray-300">Subscribe to my newsletter for data science insights</label>
+</div>
+<button type="submit" class="w-full px-6 py-3 bg-primary text-white font-medium !rounded-button hover:bg-opacity-90 transition-all duration-300 whitespace-nowrap">
+Send Message
+</button>
+</form>
+</div>
+<div class="lg:w-1/2">
+<div class="bg-[#1A1A2E] p-8 rounded-xl border border-[#2a2a3a] h-full">
+<h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary">
+<i class="ri-mail-line ri-xl"></i>
+</div>
+<div>
+<h4 class="text-lg font-medium mb-1">Email</h4>
+<a href="mailto:abdouliebalisa904@gmail.com" class="text-gray-300 hover:text-primary">abdouliebalisa904@gmail.com</a>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary">
+<i class="ri-phone-line ri-xl"></i>
+</div>
+<div>
+<h4 class="text-lg font-medium mb-1">Phone</h4>
+<p class="text-gray-300">Primary: (+220) 652-6901</p>
+<p class="text-gray-300">Secondary: (+220) 314-8206</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary">
+<i class="ri-map-pin-line ri-xl"></i>
+</div>
+<div>
+<h4 class="text-lg font-medium mb-1">Location</h4>
+<p class="text-gray-300">Banjul, The Gambia</p>
+<p class="text-gray-300">Available for remote work worldwide</p>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-medium mb-3">Connect With Me</h4>
+<div class="flex gap-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-[#2D2D3F] rounded-full text-white hover:bg-primary transition-colors duration-300">
+<i class="ri-linkedin-fill ri-xl"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-[#2D2D3F] rounded-full text-white hover:bg-primary transition-colors duration-300">
+<i class="ri-github-fill ri-xl"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-[#2D2D3F] rounded-full text-white hover:bg-primary transition-colors duration-300">
+<i class="ri-twitter-x-fill ri-xl"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-[#2D2D3F] rounded-full text-white hover:bg-primary transition-colors duration-300">
+<i class="ri-medium-fill ri-xl"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="py-12 bg-[#0F0F18] border-t border-[#2a2a3a]">
+<div class="container mx-auto px-6">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-6 md:mb-0">
+<a href="#" class="text-2xl font-['Pacifico'] gradient-text">AB</a>
+<p class="text-gray-400 mt-2">Data Scientist & Cybersecurity Enthusiast</p>
+</div>
+<div class="flex flex-wrap gap-6 justify-center mb-6 md:mb-0">
+<a href="#about" class="text-gray-400 hover:text-primary transition-colors duration-300">About</a>
+<a href="#skills" class="text-gray-400 hover:text-primary transition-colors duration-300">Skills</a>
+<a href="#coursework" class="text-gray-400 hover:text-primary transition-colors duration-300">Coursework</a>
+<a href="#projects" class="text-gray-400 hover:text-primary transition-colors duration-300">Projects</a>
+<a href="#certifications" class="text-gray-400 hover:text-primary transition-colors duration-300">Certifications</a>
+<a href="#contact" class="text-gray-400 hover:text-primary transition-colors duration-300">Contact</a>
+</div>
+<div>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-primary rounded-full text-white hover:bg-opacity-80 transition-colors duration-300">
+<i class="ri-arrow-up-line ri-xl"></i>
+</a>
+</div>
+</div>
+<div class="border-t border-[#2a2a3a] mt-8 pt-8 text-center">
+<p class="text-gray-400">© 2025 Abdoulie Balisa. All rights reserved.</p>
+<p class="text-gray-500 text-sm mt-2">Last updated: April 10, 2025</p>
+</div>
+</div>
+</footer>
+<script>
+// Smooth scroll for anchor links
+document.addEventListener('DOMContentLoaded', function() {
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+window.scrollTo({
+top: targetElement.offsetTop - 80,
+behavior: 'smooth'
+});
+}
+});
+});
+// Mobile menu toggle
+const menuButton = document.getElementById('menuButton');
+if (menuButton) {
+menuButton.addEventListener('click', function() {
+// Create mobile menu
+const mobileMenu = document.createElement('div');
+mobileMenu.id = 'mobileMenu';
+mobileMenu.style.position = 'fixed';
+mobileMenu.style.top = '0';
+mobileMenu.style.left = '0';
+mobileMenu.style.width = '100%';
+mobileMenu.style.height = '100%';
+mobileMenu.style.backgroundColor = 'rgba(18, 18, 24, 0.98)';
+mobileMenu.style.backdropFilter = 'blur(10px)';
+mobileMenu.style.zIndex = '100';
+mobileMenu.style.display = 'flex';
+mobileMenu.style.flexDirection = 'column';
+mobileMenu.style.alignItems = 'center';
+mobileMenu.style.justifyContent = 'center';
+// Close button
+const closeButton = document.createElement('button');
+closeButton.innerHTML = '<i class="ri-close-line ri-2x"></i>';
+closeButton.style.position = 'absolute';
+closeButton.style.top = '20px';
+closeButton.style.right = '20px';
+closeButton.style.background = 'none';
+closeButton.style.border = 'none';
+closeButton.style.color = 'white';
+closeButton.style.cursor = 'pointer';
+// Menu items
+const menuItems = [
+{ text: 'About', href: '#about' },
+{ text: 'Skills', href: '#skills' },
+{ text: 'Coursework', href: '#coursework' },
+{ text: 'Projects', href: '#projects' },
+{ text: 'Certifications', href: '#certifications' },
+{ text: 'Contact', href: '#contact' }
+];
+const menuList = document.createElement('div');
+menuList.style.display = 'flex';
+menuList.style.flexDirection = 'column';
+menuList.style.gap = '20px';
+menuList.style.textAlign = 'center';
+menuItems.forEach(item => {
+const menuItem = document.createElement('a');
+menuItem.href = item.href;
+menuItem.textContent = item.text;
+menuItem.style.color = 'white';
+menuItem.style.fontSize = '24px';
+menuItem.style.textDecoration = 'none';
+menuItem.style.padding = '10px';
+menuItem.style.transition = 'all 0.3s ease';
+menuItem.style.position = 'relative';
+menuItem.style.overflow = 'hidden';
+menuItem.addEventListener('mouseover', function() {
+this.style.color = 'var(--color-primary)';
+this.style.transform = 'translateY(-2px)';
+});
+menuItem.addEventListener('mouseout', function() {
+this.style.color = 'white';
+this.style.transform = 'translateY(0)';
+});
+menuItem.addEventListener('click', function(e) {
+e.preventDefault();
+document.body.removeChild(mobileMenu);
+const targetElement = document.querySelector(item.href);
+if (targetElement) {
+window.scrollTo({
+top: targetElement.offsetTop - 80,
+behavior: 'smooth'
+});
+}
+});
+menuList.appendChild(menuItem);
+});
+closeButton.addEventListener('click', function() {
+document.body.removeChild(mobileMenu);
+});
+mobileMenu.appendChild(closeButton);
+mobileMenu.appendChild(menuList);
+document.body.appendChild(mobileMenu);
+});
+}
+// Form validation
+const contactForm = document.querySelector('form');
+if (contactForm) {
+contactForm.addEventListener('submit', function(e) {
+e.preventDefault();
+// Get form values
+const name = document.getElementById('name').value;
+const email = document.getElementById('email').value;
+const subject = document.getElementById('subject').value;
+const message = document.getElementById('message').value;
+// Simple validation
+if (!name || !email || !subject || !message) {
+showNotification('Please fill in all fields', 'error');
+return;
+}
+// Email validation
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+if (!emailRegex.test(email)) {
+showNotification('Please enter a valid email address', 'error');
+return;
+}
+// Success message
+showNotification('Message sent successfully! I will get back to you soon.', 'success');
+contactForm.reset();
+});
+}
+// Notification function
+function showNotification(message, type) {
+const notification = document.createElement('div');
+notification.style.position = 'fixed';
+notification.style.bottom = '20px';
+notification.style.right = '20px';
+notification.style.padding = '15px 20px';
+notification.style.borderRadius = '8px';
+notification.style.color = 'white';
+notification.style.zIndex = '1000';
+notification.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
+notification.style.display = 'flex';
+notification.style.alignItems = 'center';
+notification.style.gap = '12px';
+notification.style.transform = 'translateY(100px)';
+notification.style.opacity = '0';
+notification.style.transition = 'all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55)';
+const icon = document.createElement('div');
+if (type === 'success') {
+notification.style.backgroundColor = 'rgba(76, 175, 80, 0.95)';
+notification.style.backdropFilter = 'blur(10px)';
+notification.style.border = '1px solid rgba(76, 175, 80, 0.3)';
+icon.innerHTML = '<i class="ri-check-line ri-lg"></i>';
+} else if (type === 'error') {
+notification.style.backgroundColor = 'rgba(244, 67, 54, 0.95)';
+notification.style.backdropFilter = 'blur(10px)';
+notification.style.border = '1px solid rgba(244, 67, 54, 0.3)';
+icon.innerHTML = '<i class="ri-error-warning-line ri-lg"></i>';
+}
+const text = document.createElement('div');
+text.textContent = message;
+notification.appendChild(icon);
+notification.appendChild(text);
+document.body.appendChild(notification);
+// Animate in
+setTimeout(() => {
+notification.style.transform = 'translateY(0)';
+notification.style.opacity = '1';
+}, 100);
+// Remove notification after 3 seconds
+setTimeout(() => {
+notification.style.transform = 'translateY(10px)';
+notification.style.opacity = '0';
+setTimeout(() => {
+document.body.removeChild(notification);
+}, 500);
+}, 3000);
+}
+// Add custom checkbox functionality
+const checkbox = document.getElementById('newsletter');
+if (checkbox) {
+checkbox.addEventListener('change', function() {
+if (this.checked) {
+this.classList.add('checked');
+} else {
+this.classList.remove('checked');
+}
+});
+}
+});
+</script>
+</body>
+</html>

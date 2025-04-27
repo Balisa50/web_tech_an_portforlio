@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cypha Stats | Excellence in African Education</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#e9b949',
+                        secondary: '#2c5a2d',
+                        accent: '#b38b59'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'full': '9999px'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .hero-section {
+            background-image: url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .hero-content {
+            background: linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 100%);
+        }
+        .pattern-bg {
+            background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Header Section -->
+    <header class="w-full bg-white shadow-sm fixed top-0 left-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center">
+                <a href="#" class="text-2xl font-bold text-secondary mr-8">UBUNTU ACADEMY</a>
+                <nav class="hidden lg:flex space-x-6">
+                    <a href="#" class="text-gray-800 font-medium hover:text-primary transition-colors">Home</a>
+                    <a href="#" class="text-gray-800 font-medium hover:text-primary transition-colors">About</a>
+                    <a href="#" class="text-gray-800 font-medium hover:text-primary transition-colors">Programs</a>
+                    <a href="#" class="text-gray-800 font-medium hover:text-primary transition-colors">Admissions</a>
+                    <a href="#" class="text-gray-800 font-medium hover:text-primary transition-colors">Contact</a>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button class="bg-primary text-white px-5 py-2 font-medium rounded whitespace-nowrap hover:bg-yellow-600 transition-colors">Apply Now</button>
+                <button class="lg:hidden w-10 h-10 flex items-center justify-center text-gray-700">
+                    <i class="ri-menu-line ri-lg"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section w-full h-[500px] mt-16 relative">
+        <div class="container mx-auto px-4 h-full flex items-center">
+            <div class="hero-content w-full md:w-2/3 p-8 text-white">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Educating Africa's Future Leaders</h1>
+                <p class="text-lg mb-8">Ubuntu Academy provides Pan-African education that combines academic excellence with African cultural values and global perspectives.</p>
+                <div class="flex flex-wrap gap-4">
+                    <button class="bg-primary text-white px-6 py-3 font-medium rounded whitespace-nowrap hover:bg-yellow-600 transition-colors">Schedule a Visit</button>
+                    <button class="bg-white text-secondary px-6 py-3 font-medium rounded whitespace-nowrap hover:bg-gray-100 transition-colors">Our Programs</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section class="py-16 pattern-bg">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Our African-Centered Approach</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded shadow-sm hover:shadow-md transition-shadow border-t-4 border-primary">
+                    <div class="w-14 h-14 bg-yellow-100 rounded-full flex items-center justify-center text-primary mb-4">
+                        <i class="ri-global-line ri-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">African Perspectives</h3>
+                    <p class="text-gray-600">Curriculum integrates African history, literature, and knowledge systems alongside global standards.</p>
+                </div>
+                <div class="bg-white p-6 rounded shadow-sm hover:shadow-md transition-shadow border-t-4 border-secondary">
+                    <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center text-secondary mb-4">
+                        <i class="ri-community-line ri-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Ubuntu Philosophy</h3>
+                    <p class="text-gray-600">We teach the values of community, compassion, and mutual respect that are central to African cultures.</p>
+                </div>
+                <div class="bg-white p-6 rounded shadow-sm hover:shadow-md transition-shadow border-t-4 border-accent">
+                    <div class="w-14 h-14 bg-amber-100 rounded-full flex items-center justify-center text-accent mb-4">
+                        <i class="ri-lightbulb-flash-line ri-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Innovation & Tradition</h3>
+                    <p class="text-gray-600">Blending modern STEM education with traditional African knowledge and problem-solving approaches.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="py-16 bg-secondary text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Our Academic Programs</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white text-gray-800 p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold mb-3 text-secondary">Primary School</h3>
+                    <p class="mb-4">Foundational education with bilingual instruction (English + African language) and cultural immersion.</p>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center"><i class="ri-check-line text-primary mr-2"></i> Ages 5-11</li>
+                        <li class="flex items-center"><i class="ri-check-line text-primary mr-2"></i> African storytelling</li>
+                        <li class="flex items-center"><i class="ri-check-line text-primary mr-2"></i> Basic STEM</li>
+                    </ul>
+                </div>
+                <div class="bg-white text-gray-800 p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold mb-3 text-secondary">Secondary School</h3>
+                    <p class="mb-4">Rigorous academic preparation with focus on African solutions to global challenges.</p>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center"><i class="ri-check-line text-primary mr-2"></i> Ages 12-18</li>
+                        <li class="flex items-center"><i class="ri-check-line text-primary mr-2"></i> African history & philosophy</li>
+                        <li class="flex items-center"><i class="ri-check-line text-primary mr-2"></i> Advanced STEM</li>
+                    </ul>
+                </div>
+                <div class="bg-white text-gray-800 p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold mb-3 text-secondary">Leadership Institute</h3>
+                    <p class="mb-4">Developing Africa's next generation of ethical leaders and change-makers.</p>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center"><i class="ri-check-line text-primary mr-2"></i> Ages 16-19</li>
+                        <li class="flex items-center"><i class="ri-check-line text-primary mr-2"></i> Social entrepreneurship</li>
+                        <li class="flex items-center"><i class="ri-check-line text-primary mr-2"></i> Pan-African studies</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cultural Highlights -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Celebrating African Heritage</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <div class="aspect-w-16 aspect-h-9 mb-4 rounded overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1548032885-b5e38734688a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="African drumming" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Arts & Culture</h3>
+                    <p class="text-gray-600">Students learn traditional African arts including drumming, dance, textile design, and storytelling alongside contemporary arts.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <div class="aspect-w-16 aspect-h-9 mb-4 rounded overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="African agriculture" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Sustainable Agriculture</h3>
+                    <p class="text-gray-600">Our agricultural program teaches traditional and modern sustainable farming techniques suited to African climates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Join Our Community</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Become part of an educational movement that honors African heritage while preparing students for global leadership.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="bg-white text-secondary px-6 py-3 font-medium rounded whitespace-nowrap hover:bg-gray-100 transition-colors">Apply Now</button>
+                <button class="bg-secondary text-white px-6 py-3 font-medium rounded whitespace-nowrap hover:bg-green-800 transition-colors">Contact Us</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Ubuntu Academy</h3>
+                    <p class="text-gray-300 mb-4">Educating Africa's future leaders with excellence, cultural pride, and global vision.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="ri-twitter-x-fill"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-primary transition-colors">Admissions</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Academic Calendar</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Tuition & Fees</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
+                    <address class="not-italic text-gray-300 space-y-2">
+                        <p>123 Knowledge Avenue<br>
+                        Accra, Ghana</p>
+                        <p>+233 123 456 789</p>
+                        <p>info@ubuntuacademy.edu.gh</p>
+                    </address>
+                </div>
+            </div>
+            <div class="pt-6 border-t border-gray-800 text-center text-gray-400 text-sm">
+                <p>&copy; 2025 Ubuntu Academy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButton = document.querySelector('.ri-menu-line').parentElement;
+            
+            menuButton.addEventListener('click', function() {
+                alert('Mobile menu would open here');
+            });
+        });
+    </script>
+</body>
+</html>

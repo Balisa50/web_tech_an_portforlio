@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuantumInsights | African Data & AI Consultancy</title>
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#e17055',
+            secondary: '#6ab04c'
+          },
+          borderRadius: {
+            'none': '0px',
+            'sm': '4px',
+            DEFAULT: '8px',
+            'md': '12px',
+            'lg': '16px',
+            'xl': '20px',
+            '2xl': '24px',
+            '3xl': '32px',
+            'full': '9999px',
+            'button': '8px'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+  <style>
+    :where([class^="ri-"])::before { content: "\f3c2"; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Poppins', sans-serif;
+    }
+    .stat-number {
+      font-weight: 700;
+      font-size: 2.5rem;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: #6ab04c;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    .active::after {
+      width: 100%;
+    }
+    input[type="search"]::-webkit-search-decoration,
+    input[type="search"]::-webkit-search-cancel-button,
+    input[type="search"]::-webkit-search-results-button,
+    input[type="search"]::-webkit-search-results-decoration {
+      display: none;
+    }
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  </style>
+</head>
+<body class="bg-white min-h-screen">
+  <!-- Header Section -->
+  <header class="w-full bg-white shadow-sm fixed top-0 left-0 right-0 z-50">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center">
+        <a href="#" class="text-2xl font-bold text-primary mr-10">QuantumInsights</a>
+        <nav class="hidden lg:flex space-x-8">
+          <a href="#" class="nav-link active text-gray-800 font-medium hover:text-primary transition-colors">Home</a>
+          <a href="#about" class="nav-link text-gray-800 font-medium hover:text-primary transition-colors">About</a>
+          <a href="#services" class="nav-link text-gray-800 font-medium hover:text-primary transition-colors">Services</a>
+          <a href="#industries" class="nav-link text-gray-800 font-medium hover:text-primary transition-colors">Industries</a>
+          <a href="#projects" class="nav-link text-gray-800 font-medium hover:text-primary transition-colors">Projects</a>
+          <a href="#contact" class="nav-link text-gray-800 font-medium hover:text-primary transition-colors">Contact</a>
+        </nav>
+      </div>
+      <div class="flex items-center space-x-4">
+        <div class="relative hidden md:block">
+          <input type="search" placeholder="Search..." class="pl-10 pr-4 py-2 w-48 rounded-full text-sm border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+          <div class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400">
+            <i class="ri-search-line"></i>
+          </div>
+        </div>
+          <i class="ri-menu-line text-xl"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="pt-24 relative overflow-hidden" style="background-image: url('https://public.readdy.ai/ai/img_res/c036ec6094442f682ef16df94ac597ff.jpg'); background-size: cover; background-position: center;">
+    <div class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent"></div>
+    <div class="container mx-auto px-4 py-20 md:py-28 relative z-10">
+      <div class="max-w-2xl">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Transforming Businesses Through Data & AI</h1>
+        <p class="text-xl text-gray-700 mb-8">Your partner in full-stack data consultancy, from analytics to AI deployment.</p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#contact" class="bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">Get a Free Consultation</a>
+          <a href="#about" class="bg-secondary text-white px-6 py-3 !rounded-button font-medium hover:bg-secondary/90 transition-colors whitespace-nowrap">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Logos Section -->
+  <section class="py-12 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-lg font-medium text-center text-gray-500 mb-8">Trusted by leading organizations across the country and beyond</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
+        <div class="p-4 grayscale hover:grayscale-0 transition-all duration-300 flex items-center justify-center">
+          <img src="https://public.readdy.ai/ai/img_res/dc81a6511ae8b4d2aa158e0848e13922.jpg" alt="Client Logo" class="max-h-12">
+        </div>
+        <div class="p-4 grayscale hover:grayscale-0 transition-all duration-300 flex items-center justify-center">
+          <img src="https://public.readdy.ai/ai/img_res/aa6ae4c2e76395d63156e27f72e6dabe.jpg" alt="Client Logo" class="max-h-12">
+        </div>
+        <div class="p-4 grayscale hover:grayscale-0 transition-all duration-300 flex items-center justify-center">
+          <img src="https://public.readdy.ai/ai/img_res/9272a96119697864494aaab2c3bf0ab4.jpg" alt="Client Logo" class="max-h-12">
+        </div>
+        <div class="p-4 grayscale hover:grayscale-0 transition-all duration-300 flex items-center justify-center">
+          <img src="https://public.readdy.ai/ai/img_res/5457838e20d7d001dbab3265a8e1de6c.jpg" alt="Client Logo" class="max-h-12">
+        </div>
+        <div class="p-4 grayscale hover:grayscale-0 transition-all duration-300 flex items-center justify-center">
+          <img src="https://public.readdy.ai/ai/img_res/6fea1afb01566164f6f1f6dc2e098121.jpg" alt="Client Logo" class="max-h-12">
+        </div>
+        <div class="p-4 grayscale hover:grayscale-0 transition-all duration-300 flex items-center justify-center">
+          <img src="https://public.readdy.ai/ai/img_res/38ef2c6c28cb1ce9e1b034550bef82bd.jpg" alt="Client Logo" class="max-h-12">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">About Us</h2>
+        
+        <!-- Founder Spotlight -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+          <div>
+            <img src="https://public.readdy.ai/ai/img_res/b77d163adc945152b2d6e57a2b259a3b.jpg" alt="Abdoulie Balisa" class="rounded-lg shadow-md w-full h-auto">
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Our Founder</h3>
+            <h4 class="text-xl font-semibold text-primary mb-4">Abdoulie Balisa</h4>
+            <p class="text-gray-700 mb-6">Abdoulie Balisa founded QuantumInsights with a vision to transform how businesses leverage data. With a background in data science and statistics, and experience working with global tech companies, Abdoulie returned to The Gambia determined to build a consultancy that would bridge the data literacy gap across the country and beyond.</p>
+            <p class="text-gray-700 mb-6">His journey began when he identified that many African businesses were collecting vast amounts of data but lacked the expertise to transform it into actionable insights. This realization led to the creation of QuantumInsights, which has since grown from a one-person operation to a team of data professionals serving clients across The Gambia and Africa at large.</p>
+            <div class="flex space-x-4">
+              <a href="#" class="text-primary hover:text-primary/80 transition-colors flex items-center">
+                <i class="ri-linkedin-fill mr-2"></i> LinkedIn
+              </a>
+              <a href="#" class="text-primary hover:text-primary/80 transition-colors flex items-center">
+                <i class="ri-twitter-x-fill mr-2"></i> Twitter
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Mission & Vision -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+          <div class="order-2 lg:order-1">
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Our Mission & Vision</h3>
+            <div class="mb-8">
+              <h4 class="text-xl font-semibold text-primary mb-3">Mission</h4>
+              <p class="text-gray-700">To empower African businesses and organizations with data-driven insights that drive sustainable growth, innovation, and competitive advantage in the global marketplace.</p>
+            </div>
+            <div class="mb-8">
+              <h4 class="text-xl font-semibold text-primary mb-3">Vision</h4>
+              <p class="text-gray-700">To be the leading data and AI consultancy in Africa, recognized globally for our expertise in delivering culturally relevant, high-impact data solutions that transform businesses and communities.</p>
+            </div>
+            <a href="#services" class="inline-block bg-secondary text-white px-6 py-3 !rounded-button font-medium hover:bg-secondary/90 transition-colors whitespace-nowrap">Our Services</a>
+          </div>
+          <div class="order-1 lg:order-2">
+            <img src="https://public.readdy.ai/ai/img_res/55e8a1c2c964d9e9935ed3a385e68e63.jpg" alt="Our Mission and Vision" class="rounded-lg shadow-md w-full h-auto">
+          </div>
+        </div>
+        
+        <!-- Team Structure -->
+        <div class="mb-16">
+          <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">The QuantumInsights Team Structure</h3>
+          <div class="bg-gray-50 p-8 rounded-lg shadow-sm">
+            <p class="text-gray-700 mb-6 text-center">At QuantumInsights, we operate with our innovative team structure, designed to deliver comprehensive data solutions efficiently.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h4 class="text-xl font-semibold text-primary mb-4 flex items-center">
+                  <i class="ri-database-2-line mr-2"></i> Data Engineering Team
+                </h4>
+                <ul class="space-y-2 text-gray-700">
+                  <li class="flex items-start">
+                    <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mr-3 mt-1">
+                      <i class="ri-check-line text-primary text-sm"></i>
+                    </div>
+                    <span>Data architects and infrastructure specialists</span>
+                  </li>
+                  <li class="flex items-start">
+                    <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mr-3 mt-1">
+                      <i class="ri-check-line text-primary text-sm"></i>
+                    </div>
+                    <span>ETL developers and data pipeline engineers</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="text-xl font-semibold text-primary mb-4 flex items-center">
+                  <i class="ri-ai-generate mr-2"></i> Data Science Team
+                </h4>
+                <ul class="space-y-2 text-gray-700">
+                  <li class="flex items-start">
+                    <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mr-3 mt-1">
+                      <i class="ri-check-line text-primary text-sm"></i>
+                    </div>
+                    <span>Data scientists and ML engineers</span>
+                  </li>
+                  <li class="flex items-start">
+                    <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mr-3 mt-1">
+                      <i class="ri-check-line text-primary text-sm"></i>
+                    </div>
+                    <span>AI specialists and research scientists</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Core Values -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-6">Our Core Values</h3>
+            <div class="space-y-6">
+              <div class="flex">
+                <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
+                  <i class="ri-lightbulb-flash-line text-primary text-2xl"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-semibold text-gray-900 mb-2">Innovation</h4>
+                  <p class="text-gray-700">We constantly push the boundaries of what's possible with data and AI, developing solutions that address uniquely African challenges.</p>
+                </div>
+              </div>
+              <div class="flex">
+                <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
+                  <i class="ri-shield-check-line text-primary text-2xl"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-semibold text-gray-900 mb-2">Security</h4>
+                  <p class="text-gray-700">We implement the highest standards of data protection and privacy, ensuring our clients' information is always secure.</p>
+                </div>
+              </div>
+              <div class="flex">
+                <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
+                  <i class="ri-scales-3-line text-primary text-2xl"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-semibold text-gray-900 mb-2">Scalability</h4>
+                  <p class="text-gray-700">Our solutions are designed to grow with your business, from startup to enterprise, adapting to your evolving data needs.</p>
+                </div>
+              </div>
+              <div class="flex">
+                <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
+                  <i class="ri-global-line text-primary text-2xl"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-semibold text-gray-900 mb-2">Impact</h4>
+                  <p class="text-gray-700">We measure our success by the tangible business outcomes and positive social impact our work creates across Africa.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-6">Our Headquarters</h3>
+            <div class="rounded-lg overflow-hidden shadow-md mb-4">
+              <div class="w-full h-64 bg-cover bg-center" style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png')"></div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <h4 class="text-lg font-semibold text-gray-900 mb-2 flex items-center">
+                <i class="ri-map-pin-line text-primary mr-2"></i> Fajikunda, The Gambia
+              </h4>
+              <p class="text-gray-700 mb-4">Our headquarters is located in the vibrant community of Fajikunda, where we've built a state-of-the-art data center and collaborative workspace designed to foster innovation.</p>
+              <a href="https://maps.google.com" target="_blank" class="text-primary hover:text-primary/80 transition-colors flex items-center">
+                <i class="ri-road-map-line mr-2"></i> Get Directions
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Key Milestones -->
+        <div class="mb-16">
+          <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">Key Milestones & Achievements</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                <i class="ri-ai-generate text-primary text-2xl"></i>
+              </div>
+              <h4 class="text-lg font-semibold text-gray-900 mb-2">AI-Powered Crop Yield Prediction</h4>
+              <p class="text-gray-700">Developed an AI system that helps small-scale farmers predict crop yields with 85% accuracy, now used by over 10,000 farmers across West Africa.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                <i class="ri-bank-line text-primary text-2xl"></i>
+              </div>
+              <h4 class="text-lg font-semibold text-gray-900 mb-2">Financial Inclusion Data Platform</h4>
+              <p class="text-gray-700">Created a data platform that has helped financial institutions extend services to over 500,000 previously unbanked individuals across East Africa.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                <i class="ri-health-book-line text-primary text-2xl"></i>
+              </div>
+              <h4 class="text-lg font-semibold text-gray-900 mb-2">Healthcare Resource Optimization</h4>
+              <p class="text-gray-700">Implemented predictive analytics systems that improved resource allocation in 25 hospitals, reducing wait times by 40% and improving patient outcomes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industries We Serve Section -->
+  <section id="industries" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Industries We Serve</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Healthcare -->
+        <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+            <i class="ri-heart-pulse-line text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Healthcare</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start">
+              <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mr-3 mt-1">
+                <i class="ri-check-line text-primary text-sm"></i>
+              </div>
+              <span>Diagnostics and patient analytics</span>
+            </li>
+            <li class="flex items-start">
+              <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mr-3 mt-1">
+                <i class="ri-check-line text-primary text-sm"></i>
+              </div>
+              <span>Resource optimization for hospitals</span>
+            </li>
+            <li class="flex items-start">
+              <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mr-3 mt-1">
+                <i class="ri-check-line text-primary text-sm"></i>
+              </div>
+              <span>Predictive analytics for disease outbreaks</span>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Finance -->
+        <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+            <i class="ri-bank-line text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Finance</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start">
+              <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mr-3 mt-1">
+                <i class="ri-check-line text-primary text-sm"></i>
+              </div>
+              <span>Credit scoring models</span>
+            </li>
+            <li class="flex items-start">
+              <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mr-3 mt-1">
+                <i class="ri-check-line text-primary text-sm"></i>
+              </div>
+              <span>Fraud detection systems</span>
+            </li>
+            <li class="flex items-start">
+              <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mr-3 mt-1">
+                <i class="ri-check-line text-primary text-sm"></i>
+              </div>
+              <span>Risk assessment tools</span>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Retail -->
+        <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+            <i class="ri-shopping-cart-line text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Retail</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start">
+              <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mr-3 mt-1">
+                <i class="ri-check-line text-primary text-sm"></i>
+              </div>
+              <span>Customer segmentation</span>
+            </li>
+            <li class="flex items-start">
+              <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mr-3 mt-1">
+                <i class="ri-check-line text-primary text-sm"></i>
+              </div>
+              <span>Sales forecasting</span>
+            </li>
+            <li class="flex items-start">
+              <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mr-3 mt-1">
+                <i class="ri-check-line text-primary text-sm"></i>
+              </div>
+              <span>Inventory optimization</span>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Telecom -->
+        <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+            <i class="ri-phone-line text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Telecom</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start">
+              <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mr-3 mt-1">
+                <i class="ri-check-line text-primary text-sm"></i>
+              </div>
+              <span>Network performance insights</span>
+            </li>
+            <li class="flex items-start">
+              <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mr-3 mt-1">
+                <i class="ri-check-line text-primary text-sm"></i>
+              </div>
+              <span>Customer churn prediction</span>
+            </li>
+            <li class="flex items-start">
+              <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mr-3 mt-1">
+                <i class="ri-check-line text-primary text-sm"></i>
+              </div>
+              <span>Usage pattern analysis</span>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Agriculture -->
+        <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+            <i class="ri-leaf-line text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Agriculture</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start">
+              <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mr-3 mt-1">
+                <i class="ri-check-line text-primary text-sm"></i>
+              </div>
+              <span>Crop yield prediction</span>
+            </li>
+            <li class="flex items-start">
+              <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mr-3 mt-1">
+                <i class="ri-check-line text-primary text-sm"></i>
+              </div>
+              <span>Farm automation systems</span>
+            </li>
+            <li class="flex items-start">
+              <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mr-3 mt-1">
+                <i class="ri-check-line text-primary text-sm"></i>
+              </div>
+              <span>Supply chain optimization</span>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Government/NGOs -->
+        <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+            <i class="ri-government-line text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Government/NGOs</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start">
+              <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mr-3 mt-1">
+                <i class="ri-check-line text-primary text-sm"></i>
+              </div>
+              <span>Data for policy-making</span>
+            </li>
+            <li class="flex items-start">
+              <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mr-3 mt-1">
+                <i class="ri-check-line text-primary text-sm"></i>
+              </div>
+              <span>Public service optimization</span>
+            </li>
+            <li class="flex items-start">
+              <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mr-3 mt-1">
+                <i class="ri-check-line text-primary text-sm"></i>
+              </div>
+              <span>Impact measurement tools</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="mt-16 text-center">
+        <h3 class="text-2xl font-bold text-gray-900 mb-6">Don't See Your Industry Listed?</h3>
+        <p class="text-gray-700 max-w-2xl mx-auto mb-8">We specialize in building custom data solutions tailored to your unique business needs across all sectors.</p>
+        <a href="#contact" class="inline-block bg-primary text-white px-8 py-3 !rounded-button font-medium hover:bg-primary/90 transition-colors">Let's Build Something Together</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Contact Us</h2>
+      
+      <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div>
+          <h3 class="text-2xl font-semibold text-gray-900 mb-6">Get in Touch</h3>
+          <p class="text-gray-700 mb-8">Ready to transform your business with data? Reach out to our team for a free consultation or to learn more about our services.</p>
+          
+          <div class="space-y-6">
+            <div class="flex items-start">
+              <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
+                <i class="ri-mail-line text-primary text-xl"></i>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-gray-900 mb-1">Email Us</h4>
+                <a href="mailto:abdouliebalisa904@gmail.com" class="text-primary hover:text-primary/80 transition-colors">abdouliebalisa904@gmail.com</a>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
+                <i class="ri-phone-line text-primary text-xl"></i>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-gray-900 mb-1">Call Us</h4>
+                <a href="tel:+2206526901" class="text-gray-700">(+220) 652-6901</a><br>
+                <a href="tel:+2203148206" class="text-gray-700">(+220) 314-8206</a>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
+                <i class="ri-map-pin-line text-primary text-xl"></i>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-gray-900 mb-1">Visit Us</h4>
+                <p class="text-gray-700">Fajikunda, West Coast Region<br>The Gambia</p>
+                <a href="https://maps.google.com" target="_blank" class="text-primary hover:text-primary/80 transition-colors inline-flex items-center mt-2">
+                  <i class="ri-road-map-line mr-2"></i> Get Directions
+                </a>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
+                <i class="ri-time-line text-primary text-xl"></i>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-gray-900 mb-1">Business Hours</h4>
+                <p class="text-gray-700">Monday - Friday: 8:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 1:00 PM</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-gray-50 p-8 rounded-lg shadow-sm">
+          <h3 class="text-2xl font-semibold text-gray-900 mb-6">Send Us a Message</h3>
+          <form class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Your Email</label>
+                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+              </div>
+            </div>
+            <div>
+              <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+              <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Your Message</label>
+              <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-primary/90 transition-colors">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-semibold mb-4">QuantumInsights</h3>
+          <p class="text-gray-400 mb-4">Transforming African businesses through innovative data and AI solutions.</p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="ri-linkedin-fill text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="ri-twitter-x-fill text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="ri-facebook-fill text-xl"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+            <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+            <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+            <li><a href="#industries" class="text-gray-400 hover:text-white transition-colors">Industries</a></li>
+            <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Services</h4>
+          <ul class="space-y-2">
+            <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Data Analytics</a></li>
+            <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">AI & ML Solutions</a></li>
+            <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Big Data</a></li>
+            <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Data Governance</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li class="flex items-start">
+              <i class="ri-map-pin-line mr-2 mt-1"></i>
+              <span>Fajikunda, The Gambia</span>
+            </li>
+            <li class="flex items-start">
+              <i class="ri-mail-line mr-2 mt-1"></i>
+              <span>abdouliebalisa904@gmail.com</span>
+            </li>
+            <li class="flex items-start">
+              <i class="ri-phone-line mr-2 mt-1"></i>
+              <span>(+220) 652-6901</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+        <p>© 2023 QuantumInsights. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuButton = document.querySelector('.lg\\:hidden');
+      const navMenu = document.querySelector('.lg\\:flex');
+      
+      if (mobileMenuButton && navMenu) {
+        mobileMenuButton.addEventListener('click', function() {
+          navMenu.classList.toggle('hidden');
+          navMenu.classList.toggle('flex');
+        });
+      }
+      
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
+            });
+            
+            // Close mobile menu if open
+            if (navMenu && !navMenu.classList.contains('hidden')) {
+              navMenu.classList.add('hidden');
+              navMenu.classList.remove('flex');
+            }
+          }
+        });
+      });
+      
+      // Active link highlighting
+      const sections = document.querySelectorAll('section');
+      const navLinks = document.querySelectorAll('.nav-link');
+      
+      window.addEventListener('scroll', function() {
+        let current = '';
+        
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          
+          if (pageYOffset >= sectionTop - 100) {
+            current = section.getAttribute('id');
+          }
+        });
+        
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+          }
+        });
+      });
+      
+      // Form submission
+      const contactForm = document.querySelector('form');
+      if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          alert('Thank you for your message! We will contact you soon.');
+          this.reset();
+        });
+      }
+    });
+  </script>
+</body>
+</html>

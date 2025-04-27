@@ -1,0 +1,7 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+    margin: 1;
+    background-color:blue;
+}

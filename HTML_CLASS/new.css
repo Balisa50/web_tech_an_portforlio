@@ -1,0 +1,20 @@
+body{
+    background-color: aquamarine;
+    background-size: 1px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+
+}
+#menu {
+    border: 1px solid rgb(76, 0, 255); /* This is red in RGB */
+    border-radius: 23px;
+    padding: 25px;
+    margin: 12px;
+    color: blue;
+
+    
+}
+#menu a:hover {
+    color: rgb(0, 255, 13); /* Changes link color to red when hovered */
+    text-decoration: underline; /* Underlines the link on hover */
+} 
